@@ -1,0 +1,7 @@
+// .eslintrc
+{
+  "extends": [
+    "react-app",
+    "plugin:prettier/recommended"
+  ]
+}
