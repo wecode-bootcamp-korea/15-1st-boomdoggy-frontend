@@ -1,0 +1,24 @@
+/*Thin Font*/
+@font-face {
+  font-family: 'THICCCBOI Thin';
+  font-weight: 100;
+  font-style: normal;
+  src: url('../fonts/THICCCBOI-Thin.woff2') format('woff2');
+}
+
+/*Regular Font*/
+@font-face {
+  font-family: 'THICCCBqOI Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/THICCCBOI-Regular.woff2') format('woff2');
+}
+/*Bold Font*/
+@font-face {
+  font-family: 'THICCCBOI Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/THICCCBOI-Bold.woff2') format('woff2');
+}
+
+$purple: #4a366c;

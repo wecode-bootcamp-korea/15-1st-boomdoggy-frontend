@@ -1,0 +1,53 @@
+@import '../../styles/reset.scss';
+@import '../../styles/common.scss';
+
+.navBar {
+  padding: 0 16px;
+  width: 100%;
+  height: 80px;
+  top: 0;
+  left: 0;
+  margin: 0;
+  background-color: white;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'THICCCBOI Bold', sans-serif;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+
+  .mainLogo img {
+    width: 110px;
+    height: 48px;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  li {
+    margin: 0 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      text-transform: uppercase;
+      color: $purple;
+
+      i {
+        font-size: 22px;
+      }
+    }
+  }
+}
