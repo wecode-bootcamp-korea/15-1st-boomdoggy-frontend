@@ -1,24 +1,47 @@
 /*Thin Font*/
 @font-face {
   font-family: 'THICCCBOI Thin';
-  font-weight: 100;
+  font-weight: 400;
   font-style: normal;
   src: url('../fonts/THICCCBOI-Thin.woff2') format('woff2');
 }
 
+@font-face {
+  font-family: 'THICCCBOI Light';
+  font-weight: 400;
+  font-style: normal;
+  src: url('../fonts/THICCCBOI-Light.woff2') format('woff2');
+}
+
 /*Regular Font*/
 @font-face {
-  font-family: 'THICCCBqOI Regular';
+  font-family: 'THICCCBOI Regular';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 100;
   src: url('../fonts/THICCCBOI-Regular.woff2') format('woff2');
 }
+
+/*Medium Font*/
+@font-face {
+  font-family: 'THICCCBOI Medium';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/THICCCBOI-Medium.woff2') format('woff2');
+}
+
 /*Bold Font*/
 @font-face {
   font-family: 'THICCCBOI Bold';
   font-style: normal;
   font-weight: 700;
   src: url('../fonts/THICCCBOI-Bold.woff2') format('woff2');
+}
+
+p {
+  font-family: 'THICCCBOI Regular', sans-serif;
+  font-size: 17px;
+  color: #4a366c;
+  margin: 0;
 }
 
 $purple: #4a366c;

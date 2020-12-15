@@ -1,6 +1,20 @@
 @import '../../styles/reset.scss';
 @import '../../styles/common.scss';
 
+.announceBar {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5f95d5;
+
+  p {
+    text-align: center;
+    display: block;
+    color: white;
+  }
+}
+
 .navBar {
   padding: 0 16px;
   width: 100%;
@@ -9,12 +23,14 @@
   left: 0;
   margin: 0;
   background-color: white;
-  position: fixed;
+  //position: fixed;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   font-family: 'THICCCBOI Bold', sans-serif;
+  font-size: 13px;
+  letter-spacing: 1px;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
 
   .mainLogo img {

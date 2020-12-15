@@ -5,6 +5,9 @@ class Nav extends Component {
   render() {
     return (
       <div>
+        <div className="announceBar">
+          <p>Vet Approved. Grain-Free. Ethically Sourced.</p>
+        </div>
         <nav className="navBar">
           <a href="/main" className="mainLogo">
             <img alt="logo" src="./images/main_logo.svg" />
