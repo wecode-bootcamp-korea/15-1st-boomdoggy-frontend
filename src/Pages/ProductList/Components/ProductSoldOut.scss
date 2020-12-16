@@ -1,0 +1,53 @@
+.item-box {
+  width: calc(25% - 40px);
+  text-align: center;
+  position: relative;
+  .item {
+    &:hover .hover__img {
+      z-index: 1;
+    }
+    a {
+      .sold-out-tag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 32%;
+        height: 8%;
+        top: 10px;
+        right: 10px;
+        background-color: #361f5b;
+        color: white;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 700;
+        z-index: 2;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .hover__img {
+        position: absolute;
+        display: block;
+        top: 0px;
+        z-index: -1;
+      }
+      .title {
+        margin: 20px 0px 15px 0px;
+      }
+
+      .sold-out-wrap {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px 50px;
+        line-height: 14px;
+        .origin-price {
+          color: #a09bb2;
+          text-decoration: line-through;
+        }
+      }
+    }
+  }
+}

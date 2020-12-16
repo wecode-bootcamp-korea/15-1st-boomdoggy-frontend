@@ -1,0 +1,94 @@
+{
+  "productList": [
+    {
+      "title": "Treat Collection",
+      "from": null,
+      "price": "£30.00",
+      "salePrice": "£20.00",
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "title": "Puffed Piggies",
+      "from": "from",
+      "price": "£6.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "title": "Trachea",
+      "from": "from",
+      "price": "£6.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "title": "Chick Feet",
+      "from": "from",
+      "price": "£6.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "title": "Fish Bites",
+      "from": "from",
+      "price": "£5.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "title": "Duck Necks",
+      "from": "from",
+      "price": "£5.50",
+      "salePrice": false,
+      "stock": false,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "title": "Beef Gullet",
+      "from": "from",
+      "price": "£5.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "title": "Rabbit Ears",
+      "from": "from",
+      "price": "£5.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "title": "Venison Sausage",
+      "from": "from",
+      "price": "£8.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "title": "Buffalo Ears",
+      "from": "from",
+      "price": "£6.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    }
+  ]
+}
