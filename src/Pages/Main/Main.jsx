@@ -102,13 +102,111 @@ class Main extends Component {
         </div>
         <div className="featuredWrapper">
           <div className="featuredProduct">
-            <div className="productImg"></div>
-            <div className="productContents">
+            <div className="product img"></div>
+            <div className="product contents">
               <h2 className="contentsTitle">Treat Collection</h2>
               <button className="button main">Buy Now!</button>
             </div>
           </div>
         </div>
+        <div className="reviewsWrapper">
+          <h2 className="contentsTitle">Our Best Reviews</h2>
+          <section className="reviewCard">
+            <div className="review img"></div>
+            <div className="review contents">
+              <div className="starsRate">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+              <p className="contentsText">
+                Rollo and Jerry are clearly very excited for their Boop treats!
+                Thank you!!
+              </p>
+              <div className="user">
+                <span className="userName">Katherine 4</span>
+                <span className="date">2020. 11. 17</span>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <footer class="footerWrapper">
+          <div class="footer container">
+            <ul class="footer list">
+              <li class="footer item">
+                <a href="#">Our Food</a>
+              </li>
+
+              <li class="footer item">
+                <a href="#">Our Treats</a>
+              </li>
+
+              <li class="footer item">
+                <a href="#">Our Story</a>
+              </li>
+            </ul>
+
+            <ul class="footer list">
+              <li class="footer item">
+                <a href="#">FAQ</a>
+              </li>
+
+              <li class="footer item">
+                <a href="#">ContactUs</a>
+              </li>
+
+              <li class="footer item">
+                <a href="#">Login In / Register</a>
+              </li>
+            </ul>
+
+            <ul class="footer list">
+              <li class="footer item">
+                <a href="#">Delivery</a>
+              </li>
+
+              <li class="footer item">
+                <a href="#">Privacy Police</a>
+              </li>
+
+              <li class="footer item">
+                <a href="#">Cookies</a>
+              </li>
+            </ul>
+
+            <ul class="footer social-list">
+              <li class="social-list item">
+                <div>
+                  <i class="fab fa-instagram"></i>
+                </div>
+              </li>
+
+              <li class="social-list item">
+                <div>
+                  <i class="fab fa-facebook-f"></i>
+                </div>
+              </li>
+
+              <li class="social-list item">
+                <div>
+                  <i class="fab fa-twitter"></i>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </footer>
+        <footer class="creditWrapper">
+          <div class="credit container">
+            <span class="credit title">2020 - All Rights Reserved</span>
+
+            <div class="credit owner">
+              <span>Made by Wecode - 15th - TeamBoomDoggy</span>
+            </div>
+          </div>
+        </footer>
       </div>
     );
   }
