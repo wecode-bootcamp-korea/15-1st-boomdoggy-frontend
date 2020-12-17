@@ -1,0 +1,39 @@
+@import '../../styles/common.scss';
+
+.MainHeader {
+  background-color: $lightGrey;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  .contentsBody {
+    width: 500px;
+  }
+
+  .buttonsWrapper {
+    margin: 30px auto 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.mainHeaderContents {
+  width: 50%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainHeaderImg {
+  background-image: url(./mainHeader_img.jpg);
+  height: 600px;
+  width: 50%;
+  background-position: center;
+  background-size: cover;
+  clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
+}

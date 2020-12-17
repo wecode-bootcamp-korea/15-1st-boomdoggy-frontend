@@ -1,47 +1,74 @@
-/*Thin Font*/
-@font-face {
-  font-family: 'THICCCBOI Thin';
-  font-weight: 400;
-  font-style: normal;
-  src: url('../fonts/THICCCBOI-Thin.woff2') format('woff2');
+@import './font';
+@import './color';
+
+/* Body */
+body {
+  display: block;
+  justify-content: center;
+  margin: 0;
+  top: 0;
+  left: 0;
+  color: $purple;
+  background-color: $white;
+  font-family: 'THICCCBOI Regular', sans-serif;
+  line-height: 1;
 }
 
-@font-face {
-  font-family: 'THICCCBOI Light';
-  font-weight: 400;
-  font-style: normal;
-  src: url('../fonts/THICCCBOI-Light.woff2') format('woff2');
+/* Typography */
+.contentsHeading {
+  margin: 0 auto 30px auto;
+  color: $blue;
+  font-family: 'THICCCBOI Medium', sans-serif;
 }
 
-/*Regular Font*/
-@font-face {
-  font-family: 'THICCCBOI Regular';
-  font-style: normal;
-  font-weight: 100;
-  src: url('../fonts/THICCCBOI-Regular.woff2') format('woff2');
+.contentsTitle {
+  margin: 0 auto 30px auto;
+  letter-spacing: -0.5px;
+  font-family: 'THICCCBOI Bold', sans-serif;
+  font-size: 300%;
+  text-align: center;
 }
 
-/*Medium Font*/
-@font-face {
-  font-family: 'THICCCBOI Medium';
-  font-style: normal;
-  font-weight: 400;
-  src: url('../fonts/THICCCBOI-Medium.woff2') format('woff2');
-}
-
-/*Bold Font*/
-@font-face {
-  font-family: 'THICCCBOI Bold';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/THICCCBOI-Bold.woff2') format('woff2');
-}
-
-p {
+.contentsBody {
+  margin: 0;
   font-family: 'THICCCBOI Regular', sans-serif;
   font-size: 17px;
-  color: #4a366c;
-  margin: 0;
+  text-align: center;
+  line-height: 130%;
 }
 
-$purple: #4a366c;
+a {
+  font-family: 'THICCCBOI Regular', sans-serif;
+  text-decoration: none;
+}
+
+/* button */
+.button,
+%button {
+  margin: 0 10px;
+  padding: 18px 32px;
+  border: none;
+  border-radius: 28px;
+  font-family: 'THICCCBOI Bold', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+  }
+}
+
+.button.main {
+  @extend %button;
+  color: $white;
+  background-color: $blue;
+}
+
+.button.sub {
+  @extend %button;
+  color: $purple;
+  background-color: $white;
+}

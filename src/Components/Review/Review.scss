@@ -1,0 +1,53 @@
+@import '../../styles/common.scss';
+
+.reviewCard {
+  display: flex;
+  flex-flow: column;
+  width: 280px;
+  margin: 50px auto 0;
+  background-color: $white;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+.review {
+  &.img {
+    width: 100%;
+    height: 200px;
+    background-color: $grey;
+  }
+  &.contents {
+    padding: 30px 20px 40px;
+
+    .starsRate {
+      margin-bottom: 10px;
+      i {
+        margin-right: 2px;
+        font-size: 140%;
+        color: $yellow;
+      }
+    }
+
+    .contentsBody {
+      text-align: left;
+    }
+
+    .user {
+      margin-top: 14px;
+      font-size: 13px;
+
+      .userName {
+        margin-right: 10px;
+        font-family: 'THICCCBOI Bold', sans-serif;
+      }
+      .date {
+        font-size: 10px;
+        color: $grey;
+      }
+    }
+  }
+}
