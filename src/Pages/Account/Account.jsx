@@ -3,7 +3,7 @@ import './Account.scss';
 class Account extends Component {
   render() {
     return (
-      <main className="accountContainer">
+      <div className="accountContainer">
         <section className="myAccountInfo">
           <div className="accountContents">
             <h3>Welcome,</h3>
@@ -24,7 +24,7 @@ class Account extends Component {
             <button className="logoutBtn">LOGOUT</button>
           </div>
         </section>
-      </main>
+      </div>
     );
   }
 }

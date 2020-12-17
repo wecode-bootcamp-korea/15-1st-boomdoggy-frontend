@@ -11,19 +11,34 @@ class SignUp extends Component {
     pw: '',
     isPwValid: false,
   };
-  getFirstValue = e => {
-    const { firstName } = this.state;
-    this.setState({ firstName: e.target.value });
-    firstName.length
-      ? this.setState({ isFirstValid: true })
-      : this.setState({ isFirstValid: false });
+
+  // getFirstValue = e => {
+  //   const { firstName } = this.state;
+  //   this.setState({ firstName: e.target.value });
+  // };
+
+  // getLastValue = e => {
+  //   const { lastName } = this.state;
+  //   this.setState({ lastName: e.target.value });
+  // };
+  handleValue = e => {
+    const { name, value } = e.target;
+    this.setState(
+      {
+        [name]: value,
+      },
+      () => {
+        this.handleValid();
+      }
+    );
   };
-  getLastValue = e => {
-    const { lastName } = this.state;
-    this.setState({ lastName: e.target.value });
-    lastName.length
-      ? this.setState({ isLastValid: true })
-      : this.setState({ isLastValid: false });
+
+  handleValid = () => {
+    const { firstName, lastName } = this.state;
+    this.setState({
+      isFirstValid: firstName.length ? true : false,
+      isLastValid: lastName.length ? true : false,
+    });
   };
 
   getEmailValue = e => {
@@ -37,7 +52,7 @@ class SignUp extends Component {
   getPwvalue = e => {
     this.setState({ pw: e.target.value });
     //8 ~ 10자 영문, 숫자 조합
-    const regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,10}$/;
+    const regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
     regExp.test(this.state.pw)
       ? this.setState({ isPwValid: true })
       : this.setState({ isPwValid: false });
@@ -57,7 +72,8 @@ class SignUp extends Component {
   //       .then(result => console.log(result.data));
   //   }
 
-  goToAccout = () => {
+  goToAccout = e => {
+    e.preventDefault();
     const {
       isEmailValid,
       isFirstValid,
@@ -68,38 +84,57 @@ class SignUp extends Component {
       email,
       pw,
     } = this.state;
+    fetch('http://192.168.0.3:8000/users/signup', {
+      method: 'POST',
+      body: JSON.stringify({
+        first_name: firstName,
+        last_name: lastName,
+        email: email,
+        password: pw,
+      }),
+    })
+      .then(res => res.json())
+      .then(result => console.log(result));
     if (isFirstValid && isLastValid && isEmailValid && isPwValid) {
       alert(`${lastName}${firstName}님 회원가입을 축하드립니다.`);
     }
 
     if (!firstName) {
       alert('이름을 입력해주세요');
-    } else if (!lastName) {
+    }
+    if (!lastName) {
       alert('성을 입력해주세요');
-    } else if (!email) {
-      alert('email을 입력해주세요');
-    } else if (!pw) {
-      alert('비밀번호를 입력해주세요');
+      return;
+    }
+    if (!email) {
+      alert('email을 제대로 입력해주세요');
+      return;
+    }
+    if (!pw) {
+      alert('비밀번호를 제대로 입력해주세요');
+      return;
     }
   };
 
   render() {
     return (
-      <div className="SignUpContainer">
+      <div className="SignUp">
         <form className="signUpForm">
           <h3>Register</h3>
           <label className="firstNameLabel">FIRST NAME</label>
           <input
             type="text"
             className="firstNameInput"
-            onChange={this.getFirstValue}
+            onChange={this.handleValue}
+            name="firstName"
           />
           <label className="lastNameLabel">LAST NAME</label>
           <input
             type="text"
             className="lastNameInput"
-            onChange={this.getLastValue}
-          ></input>
+            onChange={this.handleValue}
+            name="lastName"
+          />
           <label className="signUpEmailLabel">EMAIL</label>
           <input
             type="email"

@@ -1,0 +1,55 @@
+.SearchResults {
+  width: 100%;
+  section {
+    background: #ffffff;
+    padding: 120px 0px;
+    div {
+      width: 90%;
+      margin: 0 auto;
+      max-width: 1400px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      h1 {
+        font-size: 50px;
+        color: #361f5b;
+        margin: 33.5px 0;
+      }
+      form {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        input {
+          width: 330px;
+          height: 60px;
+          margin-right: 20px;
+          padding: 0 35px;
+          background-color: #f6f6f6;
+          border: none;
+          border-radius: 6px;
+          outline: none;
+        }
+        button {
+          width: 146px;
+          height: 50px;
+          font-size: 13px;
+          text-transform: uppercase;
+          color: #ffffff;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          background: #606eea;
+          border-radius: 27.5px;
+          font-family: 'THICCCBOI-Bold';
+          letter-spacing: 1px;
+          border: none;
+          cursor: pointer;
+          transition: 125ms;
+        }
+      }
+    }
+  }
+}
