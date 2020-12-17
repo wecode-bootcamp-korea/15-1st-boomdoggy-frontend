@@ -1,13 +1,13 @@
-.item-box {
+.ProductSale {
   width: calc(25% - 40px);
   text-align: center;
   position: relative;
   .item {
-    &:hover .hover__img {
+    &:hover .hoverImg {
       z-index: 1;
     }
     a {
-      .sale-tag {
+      .saleTag {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -28,7 +28,7 @@
         height: auto;
         display: block;
       }
-      .hover__img {
+      .hoverImg {
         position: absolute;
         display: block;
         top: 0px;
@@ -38,15 +38,15 @@
         margin: 20px 0px 15px 0px;
       }
 
-      .sale-price-wrap {
+      .salePriceWrap {
         display: flex;
         justify-content: space-evenly;
         margin: 20px 50px;
         line-height: 14px;
-        .origin-price {
+        .originPrice {
           text-decoration: line-through;
         }
-        .sale-price {
+        .salePrice {
           color: #d14e67;
         }
       }

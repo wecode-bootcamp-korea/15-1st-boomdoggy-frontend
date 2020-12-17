@@ -1,9 +1,9 @@
-.item-box {
+.Product {
   width: calc(25% - 40px);
   text-align: center;
   position: relative;
   .item {
-    &:hover .hover__img {
+    &:hover .hoverImg {
       z-index: 2;
     }
     a {
@@ -13,7 +13,7 @@
         height: auto;
         display: block;
       }
-      .hover__img {
+      .hoverImg {
         position: absolute;
         display: block;
         top: 0px;

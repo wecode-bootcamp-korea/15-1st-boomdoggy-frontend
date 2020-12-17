@@ -11,7 +11,7 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/" component={Main} />
           <Route exact path="/login" component={Login} />
-          <Route exact path="/product-list" component={ProductList} />
+          <Route exact path="/products/:category" component={ProductList} />
         </Switch>
       </Router>
     );

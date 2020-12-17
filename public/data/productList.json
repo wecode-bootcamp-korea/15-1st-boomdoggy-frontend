@@ -1,6 +1,89 @@
 {
-  "productList": [
+  "adultFood": [
     {
+      "id": 0,
+      "title": "Sample Pack",
+      "from": "FROM",
+      "price": "£7.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 1,
+      "title": "SUPERFOOD Sample Pack",
+      "from": "FROM",
+      "price": "£7.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Lamb with Sweet Potato & Mint",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Tuna with Sweet Potato & Broccoli",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Salmon with Trout, Sweet Potato & Asparagus",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Duck with Sweet Potato & Orange",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Pork with Sweet Potato & Apple",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Treat Collection",
+      "from": null,
+      "price": "£30.00",
+      "salePrice": "£20.00",
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    }
+  ],
+  "lightFood": [
+    {
+      "id": 8,
       "title": "Treat Collection",
       "from": null,
       "price": "£30.00",
@@ -10,8 +93,9 @@
       "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
     },
     {
+      "id": 9,
       "title": "Puffed Piggies",
-      "from": "from",
+      "from": "FROM",
       "price": "£6.00",
       "salePrice": false,
       "stock": true,
@@ -19,8 +103,203 @@
       "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
     },
     {
+      "id": 10,
+      "title": "Turkey with Sweet Potato & Cranberry (Light)",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Trout with Salmon, Sweet Potato & Asparagus (Light)",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    }
+  ],
+  "ourFood": [
+    {
+      "id": 12,
+      "title": "Turkey with Duck, Sweet Potato, Dill & Camomile (Puppy)",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Turkey with Sweet Potato & Cranberry (Light)",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Haddock with Sweet Potato & Parsley",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Pork with Sweet Potato & Apple",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Duck with Sweet Potato & Orange",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Trout with Salmon, Sweet Potato & Asparagus (Light)",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Salmon with Trout, Sweet Potato & Asparagus",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 19,
+      "title": "Salmon with Haddock, Blue Whiting, Sweet Potato & Asparagus (Puppy)",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 20,
+      "title": "Tuna with Sweet Potato & Broccoli",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 21,
+      "title": "Lamb with Sweet Potato & Mint",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Chicken with Turkey, Salmon, Sweet Potato & Carrot (Puppy)",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 23,
+      "title": "Venison with Sweet Potato & Mulberry",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 24,
+      "title": "Superfood 65 Duck with Parsnip, Beetroot, Orange, Asparagus & Pumpkin",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 25,
+      "title": "Superfood 65 Salmon with Dill, Spinach, Fennel, Asparagus & Tomato",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 26,
+      "title": "Superfood 65 Beef with Carrot, Green Beans, Cauliflower, Tomato & Courgette",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    }
+  ],
+  "ourTreats": [
+    {
+      "id": 27,
+      "title": "Treat Collection",
+      "from": null,
+      "price": "£30.00",
+      "salePrice": "£20.00",
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 28,
+      "title": "Puffed Piggies",
+      "from": "FROM",
+      "price": "£6.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 29,
       "title": "Trachea",
-      "from": "from",
+      "from": "FROM",
       "price": "£6.00",
       "salePrice": false,
       "stock": true,
@@ -28,8 +307,9 @@
       "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
     },
     {
+      "id": 30,
       "title": "Chick Feet",
-      "from": "from",
+      "from": "FROM",
       "price": "£6.00",
       "salePrice": false,
       "stock": true,
@@ -37,8 +317,9 @@
       "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
     },
     {
+      "id": 31,
       "title": "Fish Bites",
-      "from": "from",
+      "from": "FROM",
       "price": "£5.00",
       "salePrice": false,
       "stock": true,
@@ -46,8 +327,9 @@
       "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
     },
     {
+      "id": 32,
       "title": "Duck Necks",
-      "from": "from",
+      "from": null,
       "price": "£5.50",
       "salePrice": false,
       "stock": false,
@@ -55,8 +337,9 @@
       "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
     },
     {
+      "id": 33,
       "title": "Beef Gullet",
-      "from": "from",
+      "from": "FROM",
       "price": "£5.00",
       "salePrice": false,
       "stock": true,
@@ -64,8 +347,9 @@
       "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
     },
     {
+      "id": 34,
       "title": "Rabbit Ears",
-      "from": "from",
+      "from": "FROM",
       "price": "£5.00",
       "salePrice": false,
       "stock": true,
@@ -73,8 +357,9 @@
       "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
     },
     {
+      "id": 35,
       "title": "Venison Sausage",
-      "from": "from",
+      "from": "FROM",
       "price": "£8.00",
       "salePrice": false,
       "stock": true,
@@ -82,9 +367,94 @@
       "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
     },
     {
+      "id": 36,
       "title": "Buffalo Ears",
-      "from": "from",
+      "from": "FROM",
       "price": "£6.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    }
+  ],
+  "puppyFood": [
+    {
+      "id": 37,
+      "title": "SUPERFOOD Sample Pack",
+      "from": "FROM",
+      "price": "£7.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 38,
+      "title": "Sample Pack",
+      "from": "FROM",
+      "price": "£7.00",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 39,
+      "title": "Salmon with Haddock, Blue Whiting, Sweet Potato & Asparagus (Puppy)",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 40,
+      "title": "Turkey with Duck, Sweet Potato, Dill & Camomile (Puppy)",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 41,
+      "title": "Chicken with Turkey, Salmon, Sweet Potato & Carrot (Puppy)",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    }
+  ],
+  "superFood": [
+    {
+      "id": 42,
+      "title": "Superfood 65 Duck with Parsnip, Beetroot, Orange, Asparagus & Pumpkin",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 43,
+      "title": "Superfood 65 Salmon with Dill, Spinach, Fennel, Asparagus & Tomato",
+      "from": "FROM",
+      "price": "£16.99",
+      "salePrice": false,
+      "stock": true,
+      "img": "/images/bird.jpg",
+      "hoverImg": "https://marylandpet.com/wp-content/uploads/2018/01/Doggy-Diet.jpg"
+    },
+    {
+      "id": 44,
+      "title": "Superfood 65 Beef with Carrot, Green Beans, Cauliflower, Tomato & Courgette",
+      "from": "FROM",
+      "price": "£16.99",
       "salePrice": false,
       "stock": true,
       "img": "/images/bird.jpg",

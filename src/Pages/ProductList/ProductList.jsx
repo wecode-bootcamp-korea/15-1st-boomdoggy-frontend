@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import Option from './Components/Option';
 import Product from './Components/Product';
 import ProductSale from './Components/ProductSale';
 import ProductSoldOut from './Components/ProductSoldOut';
@@ -8,59 +10,159 @@ class ProductList extends Component {
   constructor() {
     super();
     this.state = {
-      productList: [],
+      productList: {},
+      filterData: [],
+      foodTypeValue: [
+        { value: 'adult-food', text: 'Adult Food' },
+        { value: 'light-food', text: 'Adult Light Food' },
+        { value: 'our-food', text: 'Our Food' },
+        { value: 'our-treats', text: 'Our Treats' },
+        { value: 'puppy-food', text: 'Puppy Food' },
+        { value: 'super-food', text: 'Super Food' },
+      ],
+      sortByValue: [
+        { value: 'best-selling', text: 'Best Selling' },
+        { value: 'title-ascending', text: 'Title Ascending' },
+        { value: 'title-descending', text: 'Title Descending' },
+        { value: 'price-ascending', text: 'Price Ascending' },
+        { value: 'price-descending', text: 'Price Descending' },
+      ],
     };
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/data/productList.json')
+    fetch(`http://localhost:3000/data/productList.json`)
       .then(res => res.json())
       .then(res => {
-        this.setState({ productList: res.productList });
+        this.setState({ productList: res });
       });
   }
 
+  filterFoodType = e => {
+    const { value } = e.target;
+    const { productList } = this.state;
+    this.props.history.push(`/products/${value}`);
+    switch (value) {
+      case 'adult-food':
+        this.setState({
+          filterData: productList.adultFood,
+        });
+        break;
+      case 'light-food':
+        this.setState({
+          filterData: productList.lightFood,
+        });
+        break;
+      case 'our-food':
+        this.setState({
+          filterData: productList.ourFood,
+        });
+        break;
+      case 'our-treats':
+        this.setState({
+          filterData: productList.ourTreats,
+        });
+        break;
+      case 'puppy-food':
+        this.setState({
+          filterData: productList.puppyFood,
+        });
+        break;
+      case 'super-food':
+        this.setState({
+          filterData: productList.superFood,
+        });
+        break;
+      default:
+    }
+  };
+
+  filterSortBy = e => {
+    const { value } = e.target;
+    this.props.history.push(`${this.props.match.url}?sort_by=${value}`);
+    switch (value) {
+      case 'title-ascending':
+        this.state.filterData.sort((a, b) => {
+          if (a.title < b.title) {
+            return -1;
+          }
+          return null;
+        });
+        break;
+      case 'title-descending':
+        this.state.filterData.sort((a, b) => {
+          if (a.title > b.title) {
+            return -1;
+          }
+          return null;
+        });
+        break;
+      case 'price-ascending':
+        this.state.filterData.sort((a, b) => {
+          const aPrice = Number(a.price.slice(1));
+          const bPrice = Number(b.price.slice(1));
+          if (aPrice < bPrice) {
+            return -1;
+          }
+          return null;
+        });
+        break;
+      case 'price-descending':
+        this.state.filterData.sort((a, b) => {
+          const aPrice = Number(a.price.slice(1));
+          const bPrice = Number(b.price.slice(1));
+          if (aPrice > bPrice) {
+            return -1;
+          }
+          return null;
+        });
+        break;
+      default:
+    }
+  };
+
   render() {
-    const productList = this.state.productList;
+    const { filterData, foodTypeValue, sortByValue } = this.state;
     return (
-      <main className="Product__list">
+      <main className="ProductList">
         <a href="#" className="alert">
           <p className="text">Not sure which food is right for your dog?</p>
         </a>
-        <section className="filter-bar">
+        <section className="filterBar">
           <div className="wrapping">
-            <div className="column-result">
-              <h5>10 products</h5>
+            <div className="columnResult">
+              <h5>{filterData.length} products</h5>
             </div>
             <div className="column">
-              <select name="types">
-                <option value="adult-food">Adult Food</option>
-                <option value="light-food">Adult Light Food</option>
-                <option value="our-food">Our Food</option>
-                <option value="our-treats">Our Treats</option>
-                <option value="puppy-food">Puppy Food</option>
-                <option value="super-food">Super Food</option>
+              <select name="types" onChange={e => this.filterFoodType(e)}>
+                {foodTypeValue.map((item, idx) => {
+                  return <Option key={idx} item={item} />;
+                })}
               </select>
-              <select name="sort_by">
-                <option value="best-selling">Best Selling</option>
-                <option value="manual">Featured</option>
-                <option value="title-ascending">Title Ascending</option>
-                <option value="title-descending">Title Descending</option>
-                <option value="price-ascending">Price Ascending</option>
-                <option value="price-descending">Price Descending</option>
+              <select
+                name="sort_by"
+                onChange={e => {
+                  this.filterSortBy(e);
+                }}
+              >
+                {sortByValue.map((item, idx) => {
+                  return <Option key={idx} item={item} />;
+                })}
               </select>
             </div>
           </div>
         </section>
         <section className="collection">
           <li className="wrapping">
-            {productList.map((product, idx) => {
+            {filterData.map(product => {
               if (product.stock && !product.salePrice) {
-                return <Product key={idx} product={product} />;
+                return <Product key={product.id} product={product} />;
               } else if (product.salePrice) {
-                return <ProductSale key={idx} product={product} />;
+                return <ProductSale key={product.id} product={product} />;
               } else if (!product.stock) {
-                return <ProductSoldOut key={idx} product={product} />;
+                return <ProductSoldOut key={product.id} product={product} />;
+              } else {
+                return null;
               }
             })}
           </li>
@@ -70,4 +172,4 @@ class ProductList extends Component {
   }
 }
 
-export default ProductList;
+export default withRouter(ProductList);
