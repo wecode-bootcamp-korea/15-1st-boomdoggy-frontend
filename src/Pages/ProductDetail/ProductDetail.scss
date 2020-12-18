@@ -1,0 +1,177 @@
+.ProductDetail {
+  width: 100%;
+  background-color: white;
+  padding: 80px 0;
+
+  .productInfoContainer {
+    width: 95%;
+    max-width: 1200px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+
+    div {
+      width: 45%;
+      flex-direction: column;
+
+      img {
+        background-color: yellow;
+        width: 600px;
+        height: 667px;
+      }
+      div {
+        width: 100%;
+        .smallImg {
+          width: 50%;
+          height: 300px;
+          background-color: yellowgreen;
+        }
+      }
+    }
+
+    form {
+      width: 45%;
+      h2 {
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #a09bb2;
+        display: block;
+        margin: 0 0 11px;
+      }
+      h1 {
+        font-size: 40px;
+        color: #361f5b;
+        margin: 0.67em 0;
+      }
+      span {
+        font-size: 16px;
+        margin: 0 0 16px;
+      }
+      .selectorWraper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+        div {
+          position: relative;
+          width: 100%;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+
+          label {
+            width: 50%;
+            padding: 14px 17px;
+            margin: 8px 0;
+            display: block;
+            background: #ffffff;
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 12px;
+            font-family: 'THICCCBOI-Bold';
+            letter-spacing: 0.25px;
+            border: 1px solid #f1f1f1;
+            text-align: center;
+            border-radius: 6px;
+            color: #361f5b;
+            cursor: default;
+          }
+          input {
+            display: block;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            z-index: 500;
+            margin: 0;
+            cursor: pointer;
+            box-sizing: border-box;
+            padding: 0;
+          }
+        }
+      }
+    }
+    select {
+      width: 100%;
+      font-size: 15px;
+      height: 50px;
+      margin: 15px 0;
+      padding: 0 20px;
+    }
+    label {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+
+      div {
+        margin: 8px 0 15px;
+        font-size: 15px;
+        line-height: 18px;
+        color: #361f5b;
+      }
+    }
+    button {
+      justify-content: center;
+      align-items: center;
+      min-width: 300px;
+      width: 100%;
+      height: 50px;
+      font-size: 13px;
+      color: #ffffff;
+      appearance: none;
+      background: #606eea;
+      border-radius: 27.5px;
+      letter-spacing: 1px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.reviewInfo {
+  width: 100%;
+  height: 1500px;
+  padding: 40px 0;
+  background-color: rebeccapurple;
+}
+
+.featureInfo {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  background-color: lightcoral;
+  padding: 40px 30px;
+  .featureImg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-size: cover;
+    background-position: center;
+  }
+  .featureContents {
+    padding: 40px 30px;
+    position: relative;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  h2 {
+  }
+}
+.recommendInfo {
+  width: 100%;
+  padding: 120px 0px;
+  background-color: lightseagreen;
+  div {
+    width: 100%;
+    height: 470px;
+    margin: 0 auto;
+    background-color: lightslategray;
+  }
+}
