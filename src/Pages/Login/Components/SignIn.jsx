@@ -24,7 +24,7 @@ class SignIn extends Component {
         console.log(result);
         if (result.Token) {
           localStorage.setItem('token', result.Token);
-          // this.props.histroy.push('/account');
+          this.props.history.push('/account');
         } else {
           alert('로그인 실패!');
         }

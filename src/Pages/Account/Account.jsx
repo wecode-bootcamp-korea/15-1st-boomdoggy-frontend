@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import './Account.scss';
+import { withRouter } from 'react-router-dom';
 class Account extends Component {
+  removeToken = () => {
+    localStorage.removeItem('token');
+    this.props.history.push('/main');
+  };
   render() {
     return (
       <div className="accountContainer">
@@ -21,7 +26,9 @@ class Account extends Component {
           <div className="accountContents">
             <h3>Account Details</h3>
             <button className="viewBtn">VIEW ADDRESSES</button>
-            <button className="logoutBtn">LOGOUT</button>
+            <button className="logoutBtn" onClick={this.removeToken}>
+              LOGOUT
+            </button>
           </div>
         </section>
       </div>
@@ -29,4 +36,4 @@ class Account extends Component {
   }
 }
 
-export default Account;
+export default withRouter(Account);
