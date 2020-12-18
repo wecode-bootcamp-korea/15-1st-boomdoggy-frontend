@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import './Footer.scss';
 
+const footerList = [1, 2, 3];
+const footerValue = [
+  ['Our Food', 'FAQ', 'Delivery'],
+  ['Our Treats', 'Contact Us', 'Privacy Policy'],
+  ['Our Story', 'Login / Register', 'Cookies'],
+];
 class Footer extends Component {
   render() {
-    let footerList = [1, 2, 3];
-    let footerValue = [
-      ['Our Food', 'FAQ', 'Delivery'],
-      ['Our Treats', 'Contact Us', 'Privacy Policy'],
-      ['Our Story', 'Login / Register', 'Cookies'],
-    ];
-
     return (
       <div className="Footer">
         <footer className="footerWrapper">
