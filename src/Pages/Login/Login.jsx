@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Login.scss';
 import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
-import SearchResults from './Components/SearchResults';
 class Login extends Component {
   render() {
     return (

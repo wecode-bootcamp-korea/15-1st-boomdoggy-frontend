@@ -12,15 +12,6 @@ class SignUp extends Component {
     isPwValid: false,
   };
 
-  // getFirstValue = e => {
-  //   const { firstName } = this.state;
-  //   this.setState({ firstName: e.target.value });
-  // };
-
-  // getLastValue = e => {
-  //   const { lastName } = this.state;
-  //   this.setState({ lastName: e.target.value });
-  // };
   handleValue = e => {
     const { name, value } = e.target;
     this.setState(
@@ -57,20 +48,6 @@ class SignUp extends Component {
       ? this.setState({ isPwValid: true })
       : this.setState({ isPwValid: false });
   };
-  //   componentDidMount() {
-  //     const { firstName, lastName, email, pw } = this.state;
-  //     fetch('http://localhost:3000/data/data.json', {
-  //       method: '',
-  //       body: JSON.stringify({
-  //         firstName: firstName,
-  //         lastName: lastName,
-  //         email: email,
-  //         password: pw,
-  //       }),
-  //     })
-  //       .then(res => res.json())
-  //       .then(result => console.log(result.data));
-  //   }
 
   goToAccout = e => {
     e.preventDefault();

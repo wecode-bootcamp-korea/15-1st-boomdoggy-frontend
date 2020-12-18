@@ -20,27 +20,17 @@ class SignIn extends Component {
     })
       .then(res => res.json())
       .then(result => {
+        console.log(result);
         if (result.Token) {
           localStorage.setItem('token', result.Token);
-          this.props.histroy.push('/account');
+          // this.props.histroy.push('/account');
         } else {
           alert('로그인 실패!');
         }
-        // if (
-        //   emailCheck === result.User[0].email &&
-        //   pwCheck === result.User[0].pw
-        // ) {
-        //   this.props.history.push('/account');
-        // } else {
-        //   alert('실패');
-        // }
       });
   };
 
   render() {
-    console.log(this.state.emailCheck);
-    console.log(this.state.pwCheck);
-
     return (
       <div className="SignIn">
         <form action="" className="loginForm">
