@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './SignIn.scss';
 import { withRouter } from 'react-router-dom';
+import { SIGNIN_API } from '../../../config';
 
 class SignIn extends Component {
   state = {
@@ -11,7 +12,7 @@ class SignIn extends Component {
   goToAccount = e => {
     e.preventDefault();
     const { emailCheck, pwCheck } = this.state;
-    fetch('http://192.168.0.3:8000/users/signin', {
+    fetch(`${SIGNIN_API}/users/signin`, {
       method: 'POST',
       body: JSON.stringify({
         email: emailCheck,
