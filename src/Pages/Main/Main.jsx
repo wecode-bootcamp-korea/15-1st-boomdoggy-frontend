@@ -5,7 +5,6 @@ import Features from './Components/Features/Features';
 import Steps from './Components/Steps/Steps';
 import Categories from './Components/Categories/Categories';
 import FeaturedProduct from './Components/FeaturedProduct/FeaturedProduct';
-import Reviews from './Components/Reviews/Reviews';
 
 class Main extends Component {
   render() {
@@ -17,7 +16,6 @@ class Main extends Component {
         <Steps />
         <Categories />
         <FeaturedProduct />
-        <Reviews />
       </div>
     );
   }
