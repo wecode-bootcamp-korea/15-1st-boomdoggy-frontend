@@ -3,16 +3,58 @@
     {
       "id": 1,
       "username": "Laura",
-      "img": "https://i.imgur.com/ZN4Emff.jpg",
+      "img": "https://i.imgur.com/ujlWpi6.png",
       "text": "Rollo and Jerry are clearly very excited for their Boop treats! Thank you!!",
       "date": "2020.11.17"
     },
     {
       "id": 2,
       "username": "Susan",
-      "img": "https://i.imgur.com/b1nNOCS.jpg",
-      "text": "Rollo and Jerry are clearly very excited for their Boop treats! Thank you!!",
+      "img": "https://i.imgur.com/7yGKtwg.png",
+      "text": "We have 3 dogs, 2 hunting dogs and 1 husky. The hunting dogs get a more raw diet during hunting season (I feel like this food wouldn’t have enough protein for them when working all day) but in the off season they eat less fancy. I’ve gone through one 15lb bag so far and they like it a lot better than the Purina I was giving them before. Is it the fanciest or best for them? No. But when they are just lounging around the house all day they don’t need high protein food.",
       "date": "2020.12.18"
+    },
+    {
+      "id": 3,
+      "username": "Jane",
+      "img": "https://i.imgur.com/Fkxz6rC.png",
+      "text": "I'm really loving Amazon's line of products! Having 3 large dogs, we go through dog food very quickly. While I love to save money, I don't want to sacrifice my dogs' diets to save a few bucks. This dog food has better quality ingredients than the name brand competitors and is fractions cheaper! I love that I can get a 40 pound bag shipped to my house once a month and I don't have to go to a store and schlep this much dog food in and out of the cart. Plus, the dogs love it!",
+      "date": "2020.12.07"
+    },
+    {
+      "id": 4,
+      "username": "Mary",
+      "img": "https://i.imgur.com/uzcCJhf.png",
+      "text": "I have been making my own dogs food for 4 years but wanted to find something more convenient. Good dog food used to be $15 to $20 more expensive than it is in 2019 but still not quite as cheap as I'd like. My home made dog food that I've been feeding my two dogs (20lb boston terrier and 40lb mutt) has been rice, chicken, sweet potato, potassium and sodium salts, brewers yeast and a multivitamin blend as well as powder egg shells for calcium (egg shells contain pure elemental calcium!).",
+      "date": "2020.11.24"
+    },
+    {
+      "id": 5,
+      "username": "Amber",
+      "img": "https://i.imgur.com/mDoibXk.png",
+      "text": "Just received today, but as soon as I filled up my doggies bowls, they munched it all down. I was truly surprised. Will be up dating. Update...I've subscribed! This dog food is now being delivered to my front door once a month.",
+      "date": "2020.10.04"
+    },
+    {
+      "id": 6,
+      "username": "Corey",
+      "img": "https://i.imgur.com/9BYuNQn.png",
+      "text": "My dog LOVED the Solimo Premium Chicken and Rice recipe dry dog food, but that flavor is no longer available through the Subscribe & Save program so I switched to this Solimo Basic (Chicken or Beef Flavor) version. My dog will not eat this. ",
+      "date": "2020.11.02"
+    },
+    {
+      "id": 7,
+      "username": "Maggie",
+      "img": "https://i.imgur.com/yc5m5g2.png",
+      "text": "My dogs seem to really like it. Good price. The kibble pieces are fairly large for little dogs, see picture. That said my Lhasa Apso/Yorkie mix had no trouble with it.",
+      "date": "2020.11.19"
+    },
+    {
+      "id": 8,
+      "username": "Dixie",
+      "img": "https://i.imgur.com/qFCFjPm.png",
+      "text": "I've been feeding a stray neighborhood dog this food but even he refuses to eat this until he's absolutely desperate. He ran into our house to eat our indoor dog's fancier food!",
+      "date": "2020.12.24"
     }
   ]
 }

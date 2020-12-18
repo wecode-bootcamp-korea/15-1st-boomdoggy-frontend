@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Reviews.scss';
-import Review from './Components/Review/Review';
+import ReviewCard from './Components/ReviewCard/ReviewCard';
 
 class Reviews extends Component {
   constructor() {
@@ -23,10 +23,12 @@ class Reviews extends Component {
     return (
       <section className="reviewsWrapper">
         <h2 className="contentsTitle">Our Best Reviews</h2>
-        {review &&
-          review.map(review => {
-            return <Review key={review.id} review={review} />;
-          })}
+        <div className="reviewRow">
+          {review &&
+            review.map(review => {
+              return <ReviewCard key={review.id} review={review} />;
+            })}
+        </div>
       </section>
     );
   }

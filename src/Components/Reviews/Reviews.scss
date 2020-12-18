@@ -5,3 +5,13 @@
   padding: 120px 0;
   background-color: #666;
 }
+
+.reviewRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 94%;
+  margin: 40px auto 0;
+}
