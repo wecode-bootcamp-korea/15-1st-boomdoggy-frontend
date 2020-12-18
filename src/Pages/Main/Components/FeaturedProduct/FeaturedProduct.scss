@@ -1,0 +1,55 @@
+@import '../../../../styles/common.scss';
+
+/*featured Product*/
+.featuredWrapper {
+  padding: 120px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.featuredProduct {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product {
+  margin: 0 30px;
+}
+
+.product.img {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: $lightGrey;
+
+  .saleTag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: $white;
+    background-color: $red;
+    font-family: 'THICCCBOI Bold', sans-serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  img {
+    width: 80%;
+    height: 80%;
+  }
+}
+
+.product.contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}

@@ -95,7 +95,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  font: 'THICCCBOI', sans-serif;
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -113,6 +113,8 @@ section {
   display: block;
 }
 body {
+  top: 0;
+  left: 0;
   line-height: 1;
 }
 ol,

@@ -4,7 +4,7 @@ import './MainHeader.scss';
 class MainHeader extends Component {
   render() {
     return (
-      <div className="MainHeader">
+      <section className="MainHeader">
         <div className="mainHeaderContents">
           <p className="contentsHeading">Grain Free - Made in the UK</p>
           <h2 className="contentsTitle">From Farm to Bowl</h2>
@@ -19,7 +19,7 @@ class MainHeader extends Component {
           </div>
         </div>
         <div className="mainHeaderImg"></div>
-      </div>
+      </section>
     );
   }
 }

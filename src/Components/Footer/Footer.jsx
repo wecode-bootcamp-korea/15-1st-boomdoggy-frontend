@@ -2,43 +2,31 @@ import React, { Component } from 'react';
 import './Footer.scss';
 
 class Footer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      footerValue: [
-        ['Our Food', 'Our Treats', 'Our Story'],
-        ['FAQ', 'Contact Us', 'Login / Register'],
-        ['Delivery', 'Privacy Policy', 'Cookies'],
-      ],
-    };
-  }
-
   render() {
-    let FooterList = ({ name }) => {
-      return <li className="footer item">{name}</li>;
-    };
+    let footerList = [1, 2, 3];
+    let footerValue = [
+      ['Our Food', 'FAQ', 'Delivery'],
+      ['Our Treats', 'Contact Us', 'Privacy Policy'],
+      ['Our Story', 'Login / Register', 'Cookies'],
+    ];
 
     return (
       <div className="Footer">
         <footer className="footerWrapper">
           <div className="footer container">
-            <ul className="footer list">
-              {this.state.footerValue.map((item, index) => {
-                return <FooterList key={index} name={item[0]} />;
-              })}
-            </ul>
-
-            <ul className="footer list">
-              {this.state.footerValue.map((item, index) => {
-                return <FooterList key={index} name={item[1]} />;
-              })}
-            </ul>
-
-            <ul className="footer list">
-              {this.state.footerValue.map((item, index) => {
-                return <FooterList key={index} name={item[2]} />;
-              })}
-            </ul>
+            {footerList.map((_, i) => {
+              return (
+                <ul className="footer list" key={i}>
+                  {footerValue.map((item, index) => {
+                    return (
+                      <li className="footer item" key={index}>
+                        {item[i]}
+                      </li>
+                    );
+                  })}
+                </ul>
+              );
+            })}
 
             <ul className="footer social-list">
               <li className="social-list item">
