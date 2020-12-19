@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Account.scss';
 import { withRouter } from 'react-router-dom';
+
 class Account extends Component {
   removeToken = () => {
     localStorage.removeItem('token');
@@ -11,7 +12,7 @@ class Account extends Component {
       <div className="accountContainer">
         <section className="myAccountInfo">
           <div className="accountContents">
-            <h3>Welcome,</h3>
+            <h3>Welcome, {localStorage.getItem('email')}</h3>
             <h4>My Account</h4>
             <button>MANAGE YOUR SUBSCRIPTION(S)</button>
           </div>

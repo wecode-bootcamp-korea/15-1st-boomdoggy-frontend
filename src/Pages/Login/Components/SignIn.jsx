@@ -21,9 +21,9 @@ class SignIn extends Component {
     })
       .then(res => res.json())
       .then(result => {
-        console.log(result);
         if (result.Token) {
           localStorage.setItem('token', result.Token);
+          localStorage.setItem('email', result.email);
           this.props.history.push('/account');
         } else {
           alert('로그인 실패!');

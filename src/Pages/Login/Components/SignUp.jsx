@@ -53,10 +53,10 @@ class SignUp extends Component {
   goToAccout = e => {
     e.preventDefault();
     const {
-      isEmailValid,
-      isFirstValid,
-      isLastValid,
-      isPwValid,
+      // isEmailValid,
+      // isFirstValid,
+      // isLastValid,
+      // isPwValid,
       firstName,
       lastName,
       email,
@@ -72,26 +72,27 @@ class SignUp extends Component {
       }),
     })
       .then(res => res.json())
-      .then(result => console.log(result));
-    if (isFirstValid && isLastValid && isEmailValid && isPwValid) {
-      alert(`${lastName}${firstName}님 회원가입을 축하드립니다.`);
-    }
-
-    if (!firstName) {
-      alert('이름을 입력해주세요');
-    }
-    if (!lastName) {
-      alert('성을 입력해주세요');
-      return;
-    }
-    if (!email) {
-      alert('email을 제대로 입력해주세요');
-      return;
-    }
-    if (!pw) {
-      alert('비밀번호를 제대로 입력해주세요');
-      return;
-    }
+      .then(result => {
+        console.log(result.message);
+        switch (result.message) {
+          case 'SUCCESS':
+            alert(`${lastName}${firstName}님 회원가입을 축하드립니다.`);
+            break;
+          case 'ALREADY_EXISTS':
+            alert('이메일이 이미 존재합니다.');
+            break;
+          case 'INVALID_PASSWORD':
+            alert('비밀번호를 제대로 입력해주세요');
+            break;
+          case 'INVALID_ID':
+            alert('잘못된 이메일 형식입니다.(@, . 포함)');
+            break;
+          case 'PLEASE_INSERT_YOUR_NAME':
+            alert('성 또는 이름을 입력해주세요');
+            break;
+          default:
+        }
+      });
   };
 
   render() {
