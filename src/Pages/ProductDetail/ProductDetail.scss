@@ -17,7 +17,6 @@
       flex-direction: column;
 
       img {
-        background-color: yellow;
         width: 600px;
         height: 667px;
       }
@@ -26,7 +25,6 @@
         .smallImg {
           width: 50%;
           height: 300px;
-          background-color: yellowgreen;
         }
       }
     }
@@ -53,18 +51,18 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        margin-top: 20px;
+        justify-content: space-between;
+        align-items: center;
         div {
           position: relative;
           width: 100%;
-          margin: 0 auto;
+          margin-right: 10px;
           display: flex;
           align-items: center;
 
           label {
-            width: 50%;
+            width: 80%;
             padding: 14px 17px;
-            margin: 8px 0;
             display: block;
             background: #ffffff;
             text-transform: uppercase;
@@ -76,66 +74,134 @@
             text-align: center;
             border-radius: 6px;
             color: #361f5b;
-            cursor: default;
+          }
+          label:hover {
+            border-color: #a09bb2;
           }
           input {
             display: block;
             opacity: 0;
             position: absolute;
             top: 0;
-            width: 50%;
+            width: 80%;
             height: 100%;
             z-index: 500;
             margin: 0;
             cursor: pointer;
-            box-sizing: border-box;
-            padding: 0;
           }
         }
       }
-    }
-    select {
-      width: 100%;
-      font-size: 15px;
-      height: 50px;
-      margin: 15px 0;
-      padding: 0 20px;
-    }
-    label {
-      display: flex;
-      flex-direction: column;
-      background-color: white;
 
-      div {
-        margin: 8px 0 15px;
+      .quantitySelector {
         font-size: 15px;
-        line-height: 18px;
-        color: #361f5b;
+        height: 50px;
+        margin: 15px 0;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        button {
+          height: 40px;
+          width: 40px;
+          margin: 0 auto;
+        }
+        span {
+          font-size: 24px;
+          display: flex;
+          align-items: center;
+        }
       }
-    }
-    button {
-      justify-content: center;
-      align-items: center;
-      min-width: 300px;
-      width: 100%;
-      height: 50px;
-      font-size: 13px;
-      color: #ffffff;
-      appearance: none;
-      background: #606eea;
-      border-radius: 27.5px;
-      letter-spacing: 1px;
-      border: none;
-      cursor: pointer;
+      label {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+
+        div {
+          margin: 8px 0 15px;
+          font-size: 15px;
+          line-height: 18px;
+          color: #361f5b;
+        }
+      }
+      .addBtn {
+        justify-content: center;
+        align-items: center;
+        min-width: 300px;
+        width: 100%;
+        height: 50px;
+        font-size: 13px;
+        color: #ffffff;
+        appearance: none;
+        background: #606eea;
+        border-radius: 27.5px;
+        letter-spacing: 1px;
+        border: none;
+        cursor: pointer;
+      }
+
+      .addBtn:hover {
+        transform: scale(1.1);
+      }
+      .productAccordian {
+        width: 100%;
+        padding: 0px 30px;
+        margin: 60px 0;
+        display: inline-block;
+        overflow: hidden;
+        user-select: none;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        div {
+          padding: 30px 0px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          button {
+            appearance: none;
+            border: none;
+            background: none;
+          }
+        }
+      }
     }
   }
 }
 
 .reviewInfo {
   width: 100%;
+  position: relative;
+  margin: 0 auto;
   height: 1500px;
   padding: 40px 0;
-  background-color: rebeccapurple;
+  .reviewHeader {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    .reviewHalf {
+      .reviewRating {
+        span {
+          margin: 0 10px 10px 0;
+          display: inline-block;
+        }
+      }
+    }
+    button {
+      width: 120px;
+      height: 40px;
+      color: #361f5b;
+    }
+    button:hover {
+      background-color: #361f5b;
+      color: white;
+    }
+  }
+  .reviewContainer {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .featureInfo {
@@ -160,6 +226,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    h2 {
+      margin: 32px 0;
+      display: block;
+      font-size: 1.5em;
+      margin-block-start: 0.83em;
+      margin-block-end: 0.83em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+    }
   }
   h2 {
   }

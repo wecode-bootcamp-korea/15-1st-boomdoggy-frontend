@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import './ProductDetail.scss';
 class ProductDetail extends Component {
+  state = {
+    checked: false,
+    subscribeChecked: false,
+    count: 0,
+  };
+
+  handleIncrease = () => {
+    this.setState({ count: this.state.count + 1 });
+  };
+  handleDecrease = () => {
+    const count = this.state.count - 1;
+    this.setState({ count: count < 0 ? 0 : count });
+  };
   render() {
     return (
       <>
@@ -17,7 +30,11 @@ class ProductDetail extends Component {
                 />
               </div>
             </div>
-            <form action="">
+            <form
+              onSubmit={e => {
+                e.preventDefault();
+              }}
+            >
               <h2>PUPPY FOOD</h2>
               <h1 className="infoTitle">
                 Turkey with Duck, Sweet Potato, Dill & Camomile (Puppy)
@@ -26,65 +43,108 @@ class ProductDetail extends Component {
               <div className="selectorWraper">
                 <div>
                   <label htmlFor="">2kg</label>
-                  <input type="checkbox"></input>
+                  <input
+                    type="checkbox"
+                    checked="checked"
+                    name="kgInfo"
+                    data-index="option1"
+                  ></input>
                 </div>
                 <div>
                   <label htmlFor="">6kg</label>
-                  <input type="checkbox"></input>
+                  <input
+                    type="checkbox"
+                    name="kgInfo"
+                    data-index="option1"
+                  ></input>
                 </div>
                 <div>
                   <label htmlFor="">12kg</label>
-                  <input type="checkbox"></input>
+                  <input
+                    type="checkbox"
+                    name="kgInfo"
+                    data-index="option1"
+                  ></input>
                 </div>
               </div>
-              <select size="1" className="quantitySelector">
-                <option value="1">Quantity: 1</option>
-                <option value="2">Quantity: 2</option>
-                <option value="3">Quantity: 3</option>
-                <option value="4">Quantity: 4</option>
-                <option value="5">Quantity: 5</option>
-                <option value="6">Quantity: 6</option>
-                <option value="7">Quantity: 7</option>
-                <option value="8">Quantity: 8</option>
-                <option value="9">Quantity: 9</option>
-                <option value="10">Quantity: 10</option>
-                <option value="11">Quantity: 11</option>
-                <option value="12">Quantity: 12</option>
-                <option value="13">Quantity: 13</option>
-                <option value="14">Quantity: 14</option>
-                <option value="15">Quantity: 15</option>
-                <option value="16">Quantity: 16</option>
-                <option value="17">Quantity: 17</option>
-                <option value="18">Quantity: 18</option>
-                <option value="19">Quantity: 19</option>
-                <option value="20">Quantity: 20</option>
-              </select>
+              <div className="quantitySelector">
+                <button onClick={this.handleIncrease}>+</button>
+                <span>{this.state.count}</span>
+                <button onClick={this.handleDecrease}>-</button>
+              </div>
               <label htmlFor="">
                 <div className="nomal">
-                  <input type="radio" />
+                  <input type="radio" name="checkInfo" checked="checked" />
                   <span>One-time purchase</span>
                 </div>
                 <div className="subscribe">
-                  <input type="radio" />
+                  <input type="radio" name="checkInfo" />
                   <span>Subscribe & Save 25%</span>
                 </div>
               </label>
-              <button>ADD TO CART</button>
+              <button className="addBtn">ADD TO CART</button>
               <div className="productAccordian">
-                <div className="productAccordianUnit"></div>
-                <div className="productAccordianUnit"></div>
-                <div className="productAccordianUnit"></div>
-                <div className="productAccordianUnit"></div>
+                <div className="productAccordianUnit">
+                  <h2>Product description</h2>
+                  <button
+                    onClick={e => {
+                      e.preventDefault();
+                    }}
+                  >
+                    +
+                  </button>
+                  <div></div>
+                </div>
+                <div className="productAccordianUnit">
+                  <h2>Benefits</h2>
+                  <button
+                    onClick={e => {
+                      e.preventDefault();
+                    }}
+                  >
+                    +
+                  </button>
+                </div>
+                <div className="productAccordianUnit">
+                  <h2>Ingredients</h2>
+                  <button
+                    onClick={e => {
+                      e.preventDefault();
+                    }}
+                  >
+                    +
+                  </button>
+                </div>
+                <div className="productAccordianUnit">
+                  <h2>Feeding guide</h2>
+                  <button
+                    onClick={e => {
+                      e.preventDefault();
+                    }}
+                  >
+                    +
+                  </button>
+                </div>
               </div>
             </form>
           </div>
         </section>
         <div className="reviewInfo">
           <div className="reviewHeader">
-            <div className="reviewRating"></div>
+            <div className="reviewHalf">
+              <div className="reviewRating">
+                <span>
+                  <i>별별벼ㅕㅂ려볇ㄹ</i>
+                </span>
+                <span>Reviews</span>
+              </div>
+            </div>
             <div className="writeReview">
               <button className="writeReviewBtn">Write a review</button>
             </div>
+          </div>
+          <div className="reviewContainer">
+            <span>asdhgjaskdasdkjh</span>
           </div>
         </div>
         <div className="featureInfo">
