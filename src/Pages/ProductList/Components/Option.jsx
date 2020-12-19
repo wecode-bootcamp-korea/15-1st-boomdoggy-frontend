@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 
 class Option extends Component {
   render() {
-    return (
-      <option value={this.props.item.value}>{this.props.item.text}</option>
-    );
+    const { item } = this.props;
+    return <option value={item.value}>{item.text}</option>;
   }
 }
 

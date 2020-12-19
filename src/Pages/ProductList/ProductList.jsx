@@ -6,42 +6,57 @@ import ProductSale from './Components/ProductSale';
 import ProductSoldOut from './Components/ProductSoldOut';
 import './ProductList.scss';
 
+const FOOD_TYPE_VALUE = [
+  { value: 'adult-food', text: 'Adult Food' },
+  { value: 'light-food', text: 'Adult Light Food' },
+  { value: 'our-food', text: 'Our Food' },
+  { value: 'our-treats', text: 'Our Treats' },
+  { value: 'puppy-food', text: 'Puppy Food' },
+  { value: 'super-food', text: 'Super Food' },
+];
+
+const SORT_BY_VALUE = [
+  { value: 'best-selling', text: 'Best Selling' },
+  { value: 'title-ascending', text: 'Title Ascending' },
+  { value: 'title-descending', text: 'Title Descending' },
+  { value: 'price-ascending', text: 'Price Ascending' },
+  { value: 'price-descending', text: 'Price Descending' },
+];
+
 class ProductList extends Component {
   constructor() {
     super();
     this.state = {
       productList: {},
       filterData: [],
-      foodTypeValue: [
-        { value: 'adult-food', text: 'Adult Food' },
-        { value: 'light-food', text: 'Adult Light Food' },
-        { value: 'our-food', text: 'Our Food' },
-        { value: 'our-treats', text: 'Our Treats' },
-        { value: 'puppy-food', text: 'Puppy Food' },
-        { value: 'super-food', text: 'Super Food' },
-      ],
-      sortByValue: [
-        { value: 'best-selling', text: 'Best Selling' },
-        { value: 'title-ascending', text: 'Title Ascending' },
-        { value: 'title-descending', text: 'Title Descending' },
-        { value: 'price-ascending', text: 'Price Ascending' },
-        { value: 'price-descending', text: 'Price Descending' },
-      ],
+      typeValue: '',
     };
   }
 
   componentDidMount() {
+    const value = this.props.match.params.category;
     fetch(`http://localhost:3000/data/productList.json`)
       .then(res => res.json())
       .then(res => {
-        this.setState({ productList: res });
+        this.setState({
+          productList: res,
+        });
+        this.setFilterData(value);
       });
+    this.setState({ typeValue: value });
+    this.props.history.push(`/products/${value}`);
   }
 
-  filterFoodType = e => {
-    const { value } = e.target;
+  componentDidUpdate(preProps, _) {
+    const value = this.props.match.params.category;
+    if (this.props.match.params.category !== preProps.match.params.category) {
+      this.setFilterData(value);
+      this.setState({ typeValue: value });
+    }
+  }
+
+  setFilterData = value => {
     const { productList } = this.state;
-    this.props.history.push(`/products/${value}`);
     switch (value) {
       case 'adult-food':
         this.setState({
@@ -121,8 +136,13 @@ class ProductList extends Component {
     }
   };
 
+  filterFoodType = e => {
+    const { value } = e.target;
+    this.props.history.push(`/products/${value}`);
+  };
+
   render() {
-    const { filterData, foodTypeValue, sortByValue } = this.state;
+    const { filterData, typeValue } = this.state;
     return (
       <main className="ProductList">
         <a href="#" className="alert">
@@ -134,8 +154,12 @@ class ProductList extends Component {
               <h5>{filterData.length} products</h5>
             </div>
             <div className="column">
-              <select name="types" onChange={e => this.filterFoodType(e)}>
-                {foodTypeValue.map((item, idx) => {
+              <select
+                name="types"
+                onChange={e => this.filterFoodType(e)}
+                value={typeValue}
+              >
+                {FOOD_TYPE_VALUE.map((item, idx) => {
                   return <Option key={idx} item={item} />;
                 })}
               </select>
@@ -145,7 +169,7 @@ class ProductList extends Component {
                   this.filterSortBy(e);
                 }}
               >
-                {sortByValue.map((item, idx) => {
+                {SORT_BY_VALUE.map((item, idx) => {
                   return <Option key={idx} item={item} />;
                 })}
               </select>
