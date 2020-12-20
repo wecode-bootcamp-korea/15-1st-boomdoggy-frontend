@@ -74,20 +74,24 @@
             text-align: center;
             border-radius: 6px;
             color: #361f5b;
+            .selected:focus {
+              border: 1px solid #361f5b;
+            }
           }
-          label:hover {
-            border-color: #a09bb2;
-          }
+
           input {
             display: block;
-            opacity: 0;
             position: absolute;
+            opacity: 0;
             top: 0;
             width: 80%;
             height: 100%;
             z-index: 500;
             margin: 0;
             cursor: pointer;
+            &:focus {
+              border: 1px solid #361f5b;
+            }
           }
         }
       }
@@ -111,18 +115,7 @@
           align-items: center;
         }
       }
-      label {
-        display: flex;
-        flex-direction: column;
-        background-color: white;
 
-        div {
-          margin: 8px 0 15px;
-          font-size: 15px;
-          line-height: 18px;
-          color: #361f5b;
-        }
-      }
       .addBtn {
         justify-content: center;
         align-items: center;
@@ -170,37 +163,24 @@
   }
 }
 
-.reviewInfo {
+.reviewContainer {
   width: 100%;
   position: relative;
-  margin: 0 auto;
-  height: 1500px;
-  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   .reviewHeader {
-    display: flex;
-    justify-content: space-around;
+    width: 100%;
     margin: 0 auto;
-    .reviewHalf {
-      .reviewRating {
-        span {
-          margin: 0 10px 10px 0;
-          display: inline-block;
-        }
-      }
-    }
-    button {
-      width: 120px;
-      height: 40px;
-      color: #361f5b;
-    }
-    button:hover {
-      background-color: #361f5b;
-      color: white;
-    }
-  }
-  .reviewContainer {
+    border-bottom: 1px solid lightgray;
+    padding: 20px 20px;
     display: flex;
+    text-align: center;
     justify-content: center;
+  }
+  .reviews {
+    height: auto;
   }
 }
 
@@ -243,10 +223,17 @@
   width: 100%;
   padding: 120px 0px;
   background-color: lightseagreen;
+  display: grid;
   div {
+    display: flex;
+    justify-content: center;
+
     width: 100%;
     height: 470px;
     margin: 0 auto;
     background-color: lightslategray;
+    h3 {
+      font-size: 32px;
+    }
   }
 }

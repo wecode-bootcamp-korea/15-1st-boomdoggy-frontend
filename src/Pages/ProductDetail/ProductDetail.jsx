@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import './ProductDetail.scss';
+import Review from './Components/Review';
 class ProductDetail extends Component {
   state = {
-    checked: false,
-    subscribeChecked: false,
     count: 0,
+    addClass: false,
+    show: false,
+  };
+
+  handleClick = e => {
+    this.setState({ addClass: !this.state.addClass });
   };
 
   handleIncrease = () => {
-    this.setState({ count: this.state.count + 1 });
+    const count = this.state.count + 1;
+    this.setState({ count: count < 20 ? count : 20 });
   };
   handleDecrease = () => {
     const count = this.state.count - 1;
@@ -41,30 +47,38 @@ class ProductDetail extends Component {
               </h1>
               <span className="priceInfo">$15.00</span>
               <div className="selectorWraper">
-                <div>
+                <div
+                  onClick={this.handleClick}
+                  className={`${
+                    !this.state.addClass ? 'selected' : 'non-selected'
+                  }`}
+                >
                   <label htmlFor="">2kg</label>
                   <input
-                    type="checkbox"
-                    checked="checked"
-                    name="kgInfo"
-                    data-index="option1"
+                    type="radio"
+                    defaultChecked
+                    name="kg"
+                    value="2"
+                    data-id="1"
                   ></input>
                 </div>
-                <div>
+                <div
+                  onClick={this.handleClick}
+                  className={`${
+                    !this.state.addClass ? 'selected' : 'non-selected'
+                  }`}
+                >
                   <label htmlFor="">6kg</label>
-                  <input
-                    type="checkbox"
-                    name="kgInfo"
-                    data-index="option1"
-                  ></input>
+                  <input type="radio" name="kg" value="6" data-id="2"></input>
                 </div>
-                <div>
+                <div
+                  onClick={this.handleClick}
+                  className={`${
+                    !this.state.addClass ? 'selected' : 'non-selected'
+                  }`}
+                >
                   <label htmlFor="">12kg</label>
-                  <input
-                    type="checkbox"
-                    name="kgInfo"
-                    data-index="option1"
-                  ></input>
+                  <input type="radio" name="kg" value="12" data-id="3"></input>
                 </div>
               </div>
               <div className="quantitySelector">
@@ -72,42 +86,51 @@ class ProductDetail extends Component {
                 <span>{this.state.count}</span>
                 <button onClick={this.handleDecrease}>-</button>
               </div>
-              <label htmlFor="">
-                <div className="nomal">
-                  <input type="radio" name="checkInfo" checked="checked" />
-                  <span>One-time purchase</span>
-                </div>
-                <div className="subscribe">
-                  <input type="radio" name="checkInfo" />
-                  <span>Subscribe & Save 25%</span>
-                </div>
-              </label>
               <button className="addBtn">ADD TO CART</button>
               <div className="productAccordian">
                 <div className="productAccordianUnit">
                   <h2>Product description</h2>
+                  {this.state.show ? (
+                    <div>
+                      <h1>Hide and Show</h1>
+                    </div>
+                  ) : null}
                   <button
                     onClick={e => {
-                      e.preventDefault();
+                      console.log('1');
+
+                      this.setState({ show: !this.state.show });
                     }}
                   >
-                    +
+                    {this.state.show ? '-' : '+'}
                   </button>
-                  <div></div>
                 </div>
                 <div className="productAccordianUnit">
                   <h2>Benefits</h2>
+                  {this.state.show ? (
+                    <div>
+                      <h1>Hide and Show</h1>
+                    </div>
+                  ) : null}
                   <button
+                    name="btn2"
                     onClick={e => {
-                      e.preventDefault();
+                      console.log('2');
+                      this.setState({ show: !this.state.show });
                     }}
                   >
-                    +
+                    {this.state.show ? '-' : '+'}
                   </button>
                 </div>
                 <div className="productAccordianUnit">
                   <h2>Ingredients</h2>
+                  {this.state.show ? (
+                    <div>
+                      <h1>Hide and Show</h1>
+                    </div>
+                  ) : null}
                   <button
+                    name="btn3"
                     onClick={e => {
                       e.preventDefault();
                     }}
@@ -117,34 +140,26 @@ class ProductDetail extends Component {
                 </div>
                 <div className="productAccordianUnit">
                   <h2>Feeding guide</h2>
+                  {this.state.show ? (
+                    <div>
+                      <h1>Hide and Show</h1>
+                    </div>
+                  ) : null}
                   <button
+                    name="btn4"
                     onClick={e => {
                       e.preventDefault();
                     }}
-                  >
-                    +
-                  </button>
+                  ></button>
                 </div>
               </div>
             </form>
           </div>
         </section>
-        <div className="reviewInfo">
-          <div className="reviewHeader">
-            <div className="reviewHalf">
-              <div className="reviewRating">
-                <span>
-                  <i>별별벼ㅕㅂ려볇ㄹ</i>
-                </span>
-                <span>Reviews</span>
-              </div>
-            </div>
-            <div className="writeReview">
-              <button className="writeReviewBtn">Write a review</button>
-            </div>
-          </div>
-          <div className="reviewContainer">
-            <span>asdhgjaskdasdkjh</span>
+        <div className="reviewContainer">
+          <div className="reviewHeader">reviews</div>
+          <div className="reviews">
+            <Review />
           </div>
         </div>
         <div className="featureInfo">
