@@ -1,0 +1,32 @@
+.CartEmpty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  h2 {
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: #a09bb2;
+    margin: 0px auto 20px auto;
+  }
+  a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 300px;
+    width: 100%;
+    height: 50px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #ffffff;
+    appearance: none;
+    background: #606eea;
+    border-radius: 27.5px;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
