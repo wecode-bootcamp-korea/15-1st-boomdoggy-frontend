@@ -22,6 +22,7 @@ class SignIn extends Component {
       .then(res => res.json())
       .then(result => {
         if (result.Token) {
+          console.log(result);
           localStorage.setItem('token', result.Token);
           localStorage.setItem('email', result.email);
           this.props.history.push('/account');
