@@ -1,0 +1,100 @@
+@import '../../styles/common.scss';
+
+.announceBar,
+%announceBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  transition: all 1s ease-out;
+
+  p {
+    display: block;
+    color: $white;
+    text-align: center;
+  }
+}
+
+.announceBar.red {
+  @extend %announceBar;
+  background-color: $red;
+}
+.announceBar.green {
+  @extend %announceBar;
+  background-color: $green;
+}
+.announceBar.blue {
+  @extend %announceBar;
+  background-color: $blue;
+}
+
+.navBar,
+%navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  width: 100%;
+  height: 80px;
+  top: 0;
+  left: 0;
+  margin: 0;
+  background-color: $white;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  li {
+    margin: 0 20px;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      font-family: 'THICCCBOI Bold', sans-serif;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: $purple;
+      transition: all 0.2s ease-out;
+
+      &:hover {
+        transform: scale(1.1);
+        color: lighten($purple, 50%);
+        transition: all 0.2s ease-out;
+      }
+
+      i {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+.mainLogo img {
+  width: 110px;
+  height: 48px;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    background-color: lighten($white, 50%);
+    transition: all 0.2s ease-out;
+  }
+}
+
+.navBarOn {
+  @extend %navBar;
+  position: fixed;
+  z-index: 3;
+}
