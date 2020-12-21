@@ -8,7 +8,6 @@ class ProductDetail extends Component {
       <>
         <ProductionSection />
         <div className="reviewContainer">
-          <div className="reviewHeader">reviews</div>
           <div className="reviews">
             <Reviews />
           </div>

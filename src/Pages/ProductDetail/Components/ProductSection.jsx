@@ -86,10 +86,10 @@ class ProductSection extends Component {
             <button className="addBtn">ADD TO CART</button>
             <div className="productAccordian">
               <div className="productAccordianUnit">
-                <h2>Product description</h2>
+                <span>Product description</span>
                 {this.state.showProductDetail && (
-                  <div>
-                    <h1>Hide and Show</h1>
+                  <div className="hide-contents">
+                    <p>Hide and Show</p>
                   </div>
                 )}
                 <button
@@ -103,10 +103,10 @@ class ProductSection extends Component {
                 </button>
               </div>
               <div className="productAccordianUnit">
-                <h2>Benefits</h2>
+                <span>Benefits</span>
                 {this.state.showBenefits && (
                   <div>
-                    <h1>Hide and Show</h1>
+                    <p>Hide and Show</p>
                   </div>
                 )}
                 <button
@@ -119,10 +119,10 @@ class ProductSection extends Component {
                 </button>
               </div>
               <div className="productAccordianUnit">
-                <h2>Ingredients</h2>
+                <span>Ingredients</span>
                 {this.state.showIngredients && (
                   <div>
-                    <h1>Hide and Show</h1>
+                    <p>Hide and Show</p>
                   </div>
                 )}
                 <button
@@ -136,10 +136,10 @@ class ProductSection extends Component {
                 </button>
               </div>
               <div className="productAccordianUnit">
-                <h2>Feeding guide</h2>
+                <span>Feeding guide</span>
                 {this.state.showFeedingGuide && (
                   <div>
-                    <h1>Hide and Show</h1>
+                    <p>Hide and Show</p>
                   </div>
                 )}
                 <button

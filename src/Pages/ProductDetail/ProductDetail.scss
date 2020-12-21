@@ -36,7 +36,7 @@
         letter-spacing: 1px;
         color: #a09bb2;
         display: block;
-        margin: 0 0 11px;
+        margin: 0 0 11px 10px;
       }
       h1 {
         font-size: 40px;
@@ -45,9 +45,10 @@
       }
       span {
         font-size: 16px;
-        margin: 0 0 16px;
+        margin: 0 0 20px;
       }
       .selectorWraper {
+        margin-top: 15px;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -153,6 +154,10 @@
           flex-direction: row;
           justify-content: space-between;
           align-items: center;
+          .hide-contents {
+            display: flex;
+            justify-content: space-between;
+          }
           button {
             appearance: none;
             border: none;
@@ -211,8 +216,6 @@
       margin-inline-start: 0px;
       margin-inline-end: 0px;
     }
-  }
-  h2 {
   }
 }
 .recommendInfo {
