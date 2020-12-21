@@ -1,0 +1,35 @@
+@import '../../../../styles/common.scss';
+
+/*Intro*/
+.Intro {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 120px 0;
+
+  .introContents {
+    width: 760px;
+    margin: auto;
+    text-align: center;
+
+    .contentsBody {
+      font-size: 180%;
+    }
+  }
+
+  .pattern {
+    position: absolute;
+    width: 380px;
+    height: 300px;
+    z-index: -1;
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 0;
+    }
+  }
+}

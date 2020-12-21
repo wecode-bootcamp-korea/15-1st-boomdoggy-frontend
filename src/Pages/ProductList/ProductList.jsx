@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 import Option from './Components/Option';
 import Product from './Components/Product';
 import ProductSale from './Components/ProductSale';
