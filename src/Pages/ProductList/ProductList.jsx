@@ -1,18 +1,55 @@
 import React, { Component } from 'react';
-import { Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import Option from './Components/Option';
 import Product from './Components/Product';
+import ProductListHeader from './Components/ProductListHeader';
 import ProductSale from './Components/ProductSale';
 import ProductSoldOut from './Components/ProductSoldOut';
 import './ProductList.scss';
 
 const FOOD_TYPE_VALUE = [
-  { value: 'adult-food', text: 'Adult Food' },
-  { value: 'light-food', text: 'Adult Light Food' },
-  { value: 'our-food', text: 'Our Food' },
-  { value: 'our-treats', text: 'Our Treats' },
-  { value: 'puppy-food', text: 'Puppy Food' },
-  { value: 'super-food', text: 'Super Food' },
+  {
+    value: 'adult-food',
+    text: 'Adult Food',
+    contentsBody:
+      'The Boop® journey begins with our trusted farms and fisheries. Then Boop® technology cooks the meat at a gentle 90c temperature keeping in the freshness and protecting protein. This makes our food highly digestible, higher in nutrients & we promise your dog will smell the difference.',
+    imgUrl: '/images/dogAdult.jpg',
+  },
+  {
+    value: 'light-food',
+    text: 'Adult Light Food',
+    contentsBody:
+      'Our light recipes have added L-Carnitine—an amino acid that promotes the conversion of fat to muscle for lean muscle development. L-Carnitine has other added benefits which include helping to enhance brain function, reducing muscle damage, and regulating blood sugar levels.',
+    imgUrl: '/images/dogLight.jpg',
+  },
+  {
+    value: 'our-food',
+    text: 'Our Food',
+    contentsBody:
+      'The Boop® journey begins with our trusted farms and fisheries. Then Boop® technology cooks our meat at a gentle 90c temperature, keeping in the freshness and protecting protein. This makes our food highly digestible, higher in nutrients & we promise your dog will smell the difference.',
+    imgUrl: '/images/dogOurFood.jpg',
+  },
+  {
+    value: 'our-treats',
+    text: 'Our Treats',
+    contentsBody:
+      'The Boop® journey begins with our trusted farms and fisheries. Then Boop® technology cooks our meat at a gentle 90c temperature, keeping in the freshness and protecting protein. This makes our food highly digestible, higher in nutrients & we promise your dog will smell the difference.',
+    imgUrl: '/images/dogOurTreats.jpg',
+  },
+  {
+    value: 'puppy-food',
+    text: 'Puppy Food',
+    contentsBody:
+      'All our puppy food is multi-protein source kibble, which means they are less likely to develop a sensitivity or intolerance to other protein sources in their adult years. Our Puppy Salmon flavour is bursting with naturally high levels of Omega 3, which is crucial for skin and coat development.',
+    imgUrl: '/images/dogPuppy.jpg',
+  },
+  {
+    value: 'super-food',
+    text: 'Super Food',
+    contentsBody:
+      'Our Superfoods were specifically selected for each recipe based on their high nutrient content. Formulated without Peas and White Potato for super sensitive dogs. Highly digestible with a Natural source of Collagen.',
+    imgUrl: '/images/dogSuper.jpg',
+  },
 ];
 
 const SORT_BY_VALUE = [
@@ -148,6 +185,12 @@ class ProductList extends Component {
         <a href="#" className="alert">
           <p className="text">Not sure which food is right for your dog?</p>
         </a>
+        {FOOD_TYPE_VALUE.map(item => {
+          if (item.value === this.props.match.params.category) {
+            return <ProductListHeader item={item} />;
+          }
+          return null;
+        })}
         <section className="filterBar">
           <div className="wrapping">
             <div className="columnResult">
