@@ -7,8 +7,8 @@ class SearchBar extends Component {
     isModalOpen: false,
   };
 
-  modalToggle = () => {
-    this.setState(prevState => ({ isModalOpen: !prevState.isModalOpen }));
+  handleModal = () => {
+    this.setState({ isModalOpen: !this.state.isModalOpen });
   };
 
   render() {
