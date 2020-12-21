@@ -6,9 +6,9 @@ class Review extends Component {
   };
 
   componentDidMount() {
-    fetch(''){
-
-    }
+    fetch('http://localhost:3000/data/review.json')
+      .then(res => res.json())
+      .then(res => console.log(res));
   }
   render() {
     return (

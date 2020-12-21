@@ -5,7 +5,10 @@ class ProductDetail extends Component {
   state = {
     count: 0,
     addClass: false,
-    show: false,
+    show1: false,
+    show2: false,
+    show3: false,
+    show4: false,
   };
 
   handleClick = e => {
@@ -90,7 +93,7 @@ class ProductDetail extends Component {
               <div className="productAccordian">
                 <div className="productAccordianUnit">
                   <h2>Product description</h2>
-                  {this.state.show ? (
+                  {this.state.show1 ? (
                     <div>
                       <h1>Hide and Show</h1>
                     </div>
@@ -99,15 +102,15 @@ class ProductDetail extends Component {
                     onClick={e => {
                       console.log('1');
 
-                      this.setState({ show: !this.state.show });
+                      this.setState({ show1: !this.state.show1 });
                     }}
                   >
-                    {this.state.show ? '-' : '+'}
+                    {this.state.show1 ? '-' : '+'}
                   </button>
                 </div>
                 <div className="productAccordianUnit">
                   <h2>Benefits</h2>
-                  {this.state.show ? (
+                  {this.state.show2 ? (
                     <div>
                       <h1>Hide and Show</h1>
                     </div>
@@ -116,41 +119,43 @@ class ProductDetail extends Component {
                     name="btn2"
                     onClick={e => {
                       console.log('2');
-                      this.setState({ show: !this.state.show });
+                      this.setState({ show2: !this.state.show2 });
                     }}
                   >
-                    {this.state.show ? '-' : '+'}
+                    {this.state.show2 ? '-' : '+'}
                   </button>
                 </div>
                 <div className="productAccordianUnit">
                   <h2>Ingredients</h2>
-                  {this.state.show ? (
+                  {this.state.show3 ? (
                     <div>
                       <h1>Hide and Show</h1>
                     </div>
                   ) : null}
                   <button
-                    name="btn3"
                     onClick={e => {
-                      e.preventDefault();
+                      console.log('2');
+                      this.setState({ show3: !this.state.show3 });
                     }}
                   >
-                    +
+                    {this.state.show3 ? '-' : '+'}
                   </button>
                 </div>
                 <div className="productAccordianUnit">
                   <h2>Feeding guide</h2>
-                  {this.state.show ? (
+                  {this.state.show4 ? (
                     <div>
                       <h1>Hide and Show</h1>
                     </div>
                   ) : null}
                   <button
-                    name="btn4"
                     onClick={e => {
-                      e.preventDefault();
+                      console.log('2');
+                      this.setState({ show4: !this.state.show4 });
                     }}
-                  ></button>
+                  >
+                    {this.state.show4 ? '-' : '+'}
+                  </button>
                 </div>
               </div>
             </form>
