@@ -1,0 +1,71 @@
+@import './font';
+@import './color';
+
+/* Body */
+body {
+  display: block;
+  justify-content: center;
+  color: $purple;
+  background-color: $white;
+  font-family: 'THICCCBOI Regular', sans-serif;
+  line-height: 1;
+}
+
+/* Typography */
+.contentsHeading {
+  margin: 0 auto 30px auto;
+  color: $blue;
+  font-family: 'THICCCBOI Medium', sans-serif;
+}
+
+.contentsTitle {
+  margin: 0 auto 30px auto;
+  letter-spacing: -0.5px;
+  font-family: 'THICCCBOI Bold', sans-serif;
+  font-size: 300%;
+  text-align: center;
+}
+
+.contentsBody {
+  margin: 0;
+  font-family: 'THICCCBOI Regular', sans-serif;
+  font-size: 17px;
+  text-align: center;
+  line-height: 130%;
+}
+
+a {
+  font-family: 'THICCCBOI Regular', sans-serif;
+  text-decoration: none;
+}
+
+/* button */
+.button,
+%button {
+  margin: 0 10px;
+  padding: 18px 32px;
+  border: none;
+  border-radius: 28px;
+  font-family: 'THICCCBOI Bold', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.2s ease-out;
+
+  &:hover {
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+  }
+}
+
+.button.main {
+  @extend %button;
+  color: $white;
+  background-color: $blue;
+}
+
+.button.sub {
+  @extend %button;
+  color: $purple;
+  background-color: $white;
+}

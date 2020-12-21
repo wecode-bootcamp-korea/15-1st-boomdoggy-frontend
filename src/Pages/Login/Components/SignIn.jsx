@@ -36,7 +36,7 @@ class SignIn extends Component {
     return (
       <div className="SignIn">
         <form action="" className="loginForm">
-          <h3>Sign In</h3>
+          <h3 className="contentsTitle">Sign In</h3>
           <label className="loginEmailLabel">EMAIL</label>
           <input
             type="email"

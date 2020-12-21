@@ -99,8 +99,8 @@ class SignUp extends Component {
     return (
       <div className="SignUp">
         <form className="signUpForm">
-          <h3>Register</h3>
-          <label className="firstNameLabel">FIRST NAME</label>
+          <h3 className="contentsTitle">Register</h3>
+          <label className="firstNameLabel ">FIRST NAME</label>
           <input
             type="text"
             className="firstNameInput"
