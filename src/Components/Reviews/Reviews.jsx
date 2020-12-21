@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './Reviews.scss';
 import ReviewCard from './Components/ReviewCard/ReviewCard';
+import './Reviews.scss';
 
 class Reviews extends Component {
   constructor() {
@@ -9,8 +9,9 @@ class Reviews extends Component {
       reviewList: {},
     };
   }
+
   componentDidMount() {
-    fetch(`http://localhost:3000/data/review.json`)
+    fetch(`http://localhost:3000/data/review_list.json`)
       .then(res => res.json())
       .then(res => {
         this.setState({ reviewList: res });
@@ -18,15 +19,17 @@ class Reviews extends Component {
   }
 
   render() {
-    const { review } = this.state.reviewList;
-    console.log(this.state.reviewList.review);
+    const { review_list } = this.state.reviewList;
+
     return (
       <section className="reviewsWrapper">
         <h2 className="contentsTitle">Our Best Reviews</h2>
         <div className="reviewRow">
-          {review &&
-            review.map(review => {
-              return <ReviewCard key={review.id} review={review} />;
+          {review_list &&
+            review_list.map(review_list => {
+              return (
+                <ReviewCard key={review_list.id} review_list={review_list} />
+              );
             })}
         </div>
       </section>

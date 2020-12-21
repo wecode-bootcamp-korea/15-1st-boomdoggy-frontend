@@ -1,11 +1,11 @@
-//@import '../../styles/common.scss';
+@import '../../../../styles/common.scss';
 
 .reviewCard {
   display: flex;
   flex-flow: column;
   width: 280px;
   margin: 20px 10px;
-  background-color: white;
+  background-color: $white;
   transition: all 0.2s ease-out;
 }
 
@@ -13,7 +13,7 @@
   &.imgBox {
     width: 280px;
     height: 200px;
-    background-color: #f6f6f6;
+    background-color: $lightGrey;
 
     img {
       width: 280px;
@@ -29,7 +29,7 @@
       i {
         margin-right: 2px;
         font-size: 140%;
-        color: yellow;
+        color: $yellow;
       }
     }
 
@@ -55,7 +55,7 @@
       }
       .date {
         font-size: 10px;
-        color: grey;
+        color: $grey;
       }
     }
   }
