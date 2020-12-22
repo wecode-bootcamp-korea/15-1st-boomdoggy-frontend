@@ -49,7 +49,7 @@ class Nav extends Component {
           <p>Vet Approved. Grain-Free. Ethically Sourced.</p>
         </div>
         <nav className={`${nav ? 'navBarOn' : 'navBar'}`}>
-          <a href="/main" className="mainLogo">
+          <a href="/" className="mainLogo">
             <img alt="logo" src="./images/main_logo.svg" />
           </a>
           <ul className="navList">
@@ -67,9 +67,9 @@ class Nav extends Component {
               </a>
             </li>
             <li>
-              <a href="#">
+              <Link to="/login">
                 <i className="ic user fas fa-user"></i>
-              </a>
+              </Link>
             </li>
             <li>
               <Link to="/cart">
