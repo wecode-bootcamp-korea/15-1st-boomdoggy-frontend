@@ -1,126 +1,26 @@
+
 {
-    "productDetail":[
-        {
-            "id" :1,
-            "name":"Puffed Piggies",
-            "categoryName":"TREATS",
-            "price" : 6.00,
-            "description" :"sring",
-            "ingredients" :"sring",
-            "benefits":"sring",
-            "kg":2,
-            "kgRate":10,
-            "pieces":5,
-            "piecesRate":10
-        },
-        {
-            "id" :2,
-            "name":"Puffed Piggies",
-            "categoryName":"TREATS",
-            "price" : 6.00,
-            "description" :"sring",
-            "ingredients" :"sring",
-            "benefits":"sring",
-            "kg":2,
-            "kgRate":10,
-            "pieces":5,
-            "piecesRate":10
-        },{
-            "id" :3,
-            "name":"Puffed Piggies",
-            "categoryName":"TREATS",
-            "price" : 6.00,
-            "description" :"sring",
-            "ingredients" :"sring",
-            "benefits":"sring",
-            "kg":2,
-            "kgRate":10,
-            "pieces":5,
-            "piecesRate":10
-        },{
-            "id" :4,
-            "name":"Puffed Piggies",
-            "categoryName":"TREATS",
-            "price" : 6.00,
-            "description" :"sring",
-            "ingredients" :"sring",
-            "benefits":"sring",
-            "kg":2,
-            "kgRate":10,
-            "pieces":5,
-            "piecesRate":10
-        },{
-            "id" :5,
-            "name":"Puffed Piggies",
-            "categoryName":"TREATS",
-            "price" : 6.00,
-            "description" :"sring",
-            "ingredients" :"sring",
-            "benefits":"sring",
-            "kg":2,
-            "kgRate":10,
-            "pieces":5,
-            "piecesRate":10
-        },{
-            "id" :6,
-            "name":"Puffed Piggies",
-            "categoryName":"TREATS",
-            "price" : 6.00,
-            "description" :"sring",
-            "ingredients" :"sring",
-            "benefits":"sring",
-            "kg":2,
-            "kgRate":10,
-            "pieces":5,
-            "piecesRate":10
-        },{
-            "id" :7,
-            "name":"Puffed Piggies",
-            "categoryName":"TREATS",
-            "price" : 6.00,
-            "description" :"sring",
-            "ingredients" :"sring",
-            "benefits":"sring",
-            "kg":2,
-            "kgRate":10,
-            "pieces":5,
-            "piecesRate":10
-        },{
-            "id" :8,
-            "name":"Puffed Piggies",
-            "categoryName":"TREATS",
-            "price" : 6.00,
-            "description" :"sring",
-            "ingredients" :"sring",
-            "benefits":"sring",
-            "kg":2,
-            "kgRate":10,
-            "pieces":5,
-            "piecesRate":10
-        },{
-            "id" :9,
-            "name":"Puffed Piggies",
-            "categoryName":"TREATS",
-            "price" : 6.00,
-            "description" :"sring",
-            "ingredients" :"sring",
-            "benefits":"sring",
-            "kg":2,
-            "kgRate":10,
-            "pieces":5,
-            "piecesRate":10
-        },{
-            "id" :10,
-            "name":"Puffed Piggies",
-            "categoryName":"TREATS",
-            "price" : 6.00,
-            "description" :"sring",
-            "ingredients" :"sring",
-            "benefits":"sring",
-            "kg":2,
-            "kgRate":10,
-            "pieces":5,
-            "piecesRate":10
-        }
+    "User": [
+      {
+        "id": 1,
+        "firstName": "yg",
+        "lastName": "kim",
+        "email": "yongjl12@naver.com",
+        "pw" : "qwe123456789"
+      },
+      {
+        "id": 2,
+        "firstName": "ys",
+        "lastName": "choi",
+        "email": "aaaaaaa@naver.com",
+        "pw" : "qwer123456789"
+      },
+      {
+        "id": 3,
+        "firstName": "hy",
+        "lastName": "lee",
+        "email": "bbbbbbb@naver.com",
+        "pw" : "qwert123456789"
+      }
     ]
-}
+  }
