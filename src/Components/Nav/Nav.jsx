@@ -54,10 +54,10 @@ class Nav extends Component {
           </a>
           <ul className="navList">
             <li>
-              <Link to="/products/our-treats">Our Treats</Link>
+              <Link to="/products/treats">Our Treats</Link>
             </li>
             <li>
-              <Link to="/products/our-food">Our Food</Link>
+              <Link to="/products/ourfoods">Our Food</Link>
             </li>
           </ul>
           <ul className="navOptions">

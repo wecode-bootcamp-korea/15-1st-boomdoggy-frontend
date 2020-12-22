@@ -8,12 +8,12 @@ class Product extends Component {
       <div className="Product">
         <ul className="item">
           <a href="">
-            <img src={product.img} alt="dog" />
-            <img src={product.hoverImg} alt="dogFeed" className="hoverImg" />
-            <h2 className="title">{product.title}</h2>
-            <h3 className="from">{product.from}</h3>
+            <img src={product.main_image} alt="dog" />
+            <img src={product.sub_image} alt="dogFeed" className="hoverImg" />
+            <h2 className="title">{product.name}</h2>
+            <h3 className="from">From</h3>
             <div className="priceWrap">
-              <h3 className="price">{product.price}</h3>
+              <h3 className="price">£{product.price}.00</h3>
             </div>
           </a>
         </ul>

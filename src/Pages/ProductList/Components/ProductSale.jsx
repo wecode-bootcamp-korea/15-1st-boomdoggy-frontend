@@ -9,12 +9,12 @@ class ProductSale extends Component {
         <ul className="item">
           <a href="">
             <div className="saleTag">SALE</div>
-            <img src={product.img} alt="dog" />
-            <img src={product.hoverImg} alt="dogFeed" className="hoverImg" />
-            <h2 className="title">{product.title}</h2>
+            <img src={product.main_image} alt="dog" />
+            <img src={product.sub_image} alt="dogFeed" className="hoverImg" />
+            <h2 className="title">{product.name}</h2>
             <div className="salePriceWrap">
-              <h3 className="originPrice">{product.price}</h3>
-              <h3 className="salePrice">{product.salePrice}</h3>
+              <h3 className="originPrice">£{product.price}.00</h3>
+              <h3 className="salePrice">£{product.price * 0.9}.00</h3>
             </div>
           </a>
         </ul>
