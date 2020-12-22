@@ -11,7 +11,7 @@ class Reviews extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:3000/data/review_list.json`)
+    fetch(`http://192.168.0.2:8000/products/boomdoggy`)
       .then(res => res.json())
       .then(res => {
         this.setState({ reviewList: res });
