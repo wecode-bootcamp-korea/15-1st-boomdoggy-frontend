@@ -49,7 +49,7 @@ class Nav extends Component {
         </div>
         <nav className={`${nav ? 'navBarOn' : 'navBar'}`}>
           <a href="/" className="mainLogo">
-            <img alt="logo" src="./images/main_logo.svg" />
+            <img alt="logo" src="/images/main_logo.svg" />
           </a>
           <ul className="navList">
             <li>

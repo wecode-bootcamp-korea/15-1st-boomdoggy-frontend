@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import './ProductSection.scss';
 class ProductSection extends Component {
   state = {
@@ -13,6 +14,24 @@ class ProductSection extends Component {
     showIngredients: false,
     showFeedingGuide: false,
     products: [],
+    price: 0,
+  };
+  handlePrice = e => {
+    const { products, value } = this.state;
+    switch (value) {
+      case '2':
+        this.setState({ price: products.price });
+        break;
+      case '6':
+        this.setState({ price: 0 });
+        this.setState({ price: products.price * 3 });
+        break;
+      case '12':
+        this.setState({ price: 0 });
+        this.setState({ price: products.price * 6 });
+        break;
+      default:
+    }
   };
 
   handleRadio = event => {
@@ -32,14 +51,12 @@ class ProductSection extends Component {
   };
 
   componentDidMount = () => {
-    fetch('http://192.168.0.2:8000/products/detail/1')
+    const value = this.props.match.params.items;
+    fetch(`http://192.168.0.2:8000/products/detail/${value}`)
       .then(res => res.json())
       .then(res => this.setState({ products: res.products_detail }));
   };
   render() {
-    console.log(this.state.radioGroup['2']);
-    console.log(this.state.radioGroup['6']);
-    console.log(this.state.radioGroup['12']);
     const { products } = this.state;
     return (
       <section className="ProductDetail">
@@ -62,7 +79,7 @@ class ProductSection extends Component {
           >
             <h2>{products.category}</h2>
             <h1 className="infoTitle">{products.name}</h1>
-            <span className="priceInfo">{`€  ${products.price}`}</span>
+            <span className="priceInfo">{`€  ${this.state.price}`}</span>
             <div className="selectorWraper">
               <div className={this.state.radioGroup['2'] ? 'active' : null}>
                 <label For="id1">2kg</label>
@@ -72,6 +89,7 @@ class ProductSection extends Component {
                   name="radioGroup"
                   value="2"
                   onChange={this.handleRadio}
+                  onClick={this.handlePrice}
                 ></input>
               </div>
               <div className={this.state.radioGroup['6'] ? 'active' : null}>
@@ -82,6 +100,7 @@ class ProductSection extends Component {
                   name="radioGroup"
                   value="6"
                   onChange={this.handleRadio}
+                  onClick={this.handlePrice}
                 ></input>
               </div>
               <div className={this.state.radioGroup['12'] ? 'active' : null}>
@@ -92,6 +111,7 @@ class ProductSection extends Component {
                   name="radioGroup"
                   value="12"
                   onChange={this.handleRadio}
+                  onClick={this.handlePrice}
                 ></input>
               </div>
             </div>
@@ -162,4 +182,4 @@ class ProductSection extends Component {
   }
 }
 
-export default ProductSection;
+export default withRouter(ProductSection);
