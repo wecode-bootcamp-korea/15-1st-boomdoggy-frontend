@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.scss';
-
+import { Link } from 'react-router-dom';
 class Nav extends Component {
   listener = null;
   constructor(props) {
@@ -67,9 +67,9 @@ class Nav extends Component {
               </a>
             </li>
             <li>
-              <a href="#">
+              <Link to="/login">
                 <i className="ic user fas fa-user"></i>
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#">
