@@ -1,14 +1,15 @@
 /* Reviews */
+@import '../../../styles/color';
 .reviewsWrapper {
   padding: 120px 0;
-  background-color: lightGrey;
+  background-color: $lightGrey;
 }
 .reviewRow {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-start;
   flex-wrap: wrap;
-  width: 65%;
+  width: 70%;
   margin: 40px auto 0;
 }

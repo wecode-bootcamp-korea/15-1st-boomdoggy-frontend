@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
-
+import './ProductSection.scss';
 class ProductSection extends Component {
   state = {
     count: 0,
+    radioGroup: {
+      2: true,
+      6: false,
+      12: false,
+    },
     showProductDetail: false,
     showBenefits: false,
     showIngredients: false,
     showFeedingGuide: false,
+    products: [],
+  };
+
+  handleRadio = event => {
+    let obj = {};
+    obj[event.target.value] = event.target.checked; // true
+    this.setState({ radioGroup: obj });
   };
 
   handleIncrease = () => {
@@ -19,16 +31,26 @@ class ProductSection extends Component {
     this.setState({ count: count < 0 ? 0 : count });
   };
 
+  componentDidMount = () => {
+    fetch('http://192.168.0.2:8000/products/detail/1')
+      .then(res => res.json())
+      .then(res => this.setState({ products: res.products_detail }));
+  };
   render() {
+    console.log(this.state.radioGroup['2']);
+    console.log(this.state.radioGroup['6']);
+    console.log(this.state.radioGroup['12']);
+    const { products } = this.state;
     return (
       <section className="ProductDetail">
         <div className="productInfoContainer">
           <div className="productImg">
-            <img src="../images/cutedog.png" alt="" className="bigImg" />
+            "
+            <img src={products.main_image} alt="mainImg" className="bigImg" />
             <div className="smallImgs">
               <img
-                src="../images/pets-4383147_640.jpg"
-                alt=""
+                src={products.sub_image}
+                alt="mainImg"
                 className="smallImg"
               />
             </div>
@@ -38,44 +60,39 @@ class ProductSection extends Component {
               e.preventDefault();
             }}
           >
-            <h2>PUPPY FOOD</h2>
-            <h1 className="infoTitle">
-              Turkey with Duck, Sweet Potato, Dill & Camomile (Puppy)
-            </h1>
-            <span className="priceInfo">$15.00</span>
+            <h2>{products.category}</h2>
+            <h1 className="infoTitle">{products.name}</h1>
+            <span className="priceInfo">{`€  ${products.price}`}</span>
             <div className="selectorWraper">
-              <div
-                onClick={this.handleClick}
-                className={`${
-                  !this.state.addClass ? 'selected' : 'non-selected'
-                }`}
-              >
-                <label htmlFor="">2kg</label>
+              <div className={this.state.radioGroup['2'] ? 'active' : null}>
+                <label For="id1">2kg</label>
                 <input
                   type="radio"
-                  defaultChecked
-                  name="kg"
+                  checked={this.state.radioGroup['2']}
+                  name="radioGroup"
                   value="2"
-                  data-id="1"
+                  onChange={this.handleRadio}
                 ></input>
               </div>
-              <div
-                onClick={this.handleClick}
-                className={`${
-                  !this.state.addClass ? 'selected' : 'non-selected'
-                }`}
-              >
-                <label htmlFor="">6kg</label>
-                <input type="radio" name="kg" value="6" data-id="2"></input>
+              <div className={this.state.radioGroup['6'] ? 'active' : null}>
+                <label For="id2">6kg</label>
+                <input
+                  type="radio"
+                  checked={this.state.radioGroup['6']}
+                  name="radioGroup"
+                  value="6"
+                  onChange={this.handleRadio}
+                ></input>
               </div>
-              <div
-                onClick={this.handleClick}
-                className={`${
-                  !this.state.addClass ? 'selected' : 'non-selected'
-                }`}
-              >
-                <label htmlFor="">12kg</label>
-                <input type="radio" name="kg" value="12" data-id="3"></input>
+              <div className={this.state.radioGroup['12'] ? 'active' : null}>
+                <label For="id3">12kg</label>
+                <input
+                  type="radio"
+                  checked={this.state.radioGroup['12']}
+                  name="radioGroup"
+                  value="12"
+                  onChange={this.handleRadio}
+                ></input>
               </div>
             </div>
             <div className="quantitySelector">
@@ -86,10 +103,12 @@ class ProductSection extends Component {
             <button className="addBtn">ADD TO CART</button>
             <div className="productAccordian">
               <div className="productAccordianUnit">
-                <span>Product description</span>
+                <div className="productAccordianHeader">
+                  Product description
+                </div>
                 {this.state.showProductDetail && (
                   <div className="hide-contents">
-                    <p>Hide and Show</p>
+                    {products.description && products.description}
                   </div>
                 )}
                 <button
@@ -103,10 +122,10 @@ class ProductSection extends Component {
                 </button>
               </div>
               <div className="productAccordianUnit">
-                <span>Benefits</span>
+                <div className="productAccordianHeader">Benefits</div>
                 {this.state.showBenefits && (
-                  <div>
-                    <p>Hide and Show</p>
+                  <div className="hide-contents">
+                    {products.benefits && products.benefits}
                   </div>
                 )}
                 <button
@@ -119,10 +138,10 @@ class ProductSection extends Component {
                 </button>
               </div>
               <div className="productAccordianUnit">
-                <span>Ingredients</span>
+                <div className="productAccordianHeader">Ingredients</div>
                 {this.state.showIngredients && (
-                  <div>
-                    <p>Hide and Show</p>
+                  <div className="hide-contents">
+                    {products.ingredients && products.ingredients}
                   </div>
                 )}
                 <button
@@ -133,23 +152,6 @@ class ProductSection extends Component {
                   }}
                 >
                   {this.state.showIngredients ? '-' : '+'}
-                </button>
-              </div>
-              <div className="productAccordianUnit">
-                <span>Feeding guide</span>
-                {this.state.showFeedingGuide && (
-                  <div>
-                    <p>Hide and Show</p>
-                  </div>
-                )}
-                <button
-                  onClick={e => {
-                    this.setState({
-                      showFeedingGuide: !this.state.showFeedingGuide,
-                    });
-                  }}
-                >
-                  {this.state.showFeedingGuide ? '-' : '+'}
                 </button>
               </div>
             </div>

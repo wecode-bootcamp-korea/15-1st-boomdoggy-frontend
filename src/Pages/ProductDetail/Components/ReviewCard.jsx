@@ -6,7 +6,7 @@ class ReviewCard extends Component {
     return (
       <section className="reviewCard">
         <div className="review imgBox">
-          <img alt="review img" src={review.img} />
+          <img alt="review img" src={review.image} />
         </div>
         <div className="review contents">
           <div className="starsRate">
@@ -16,9 +16,9 @@ class ReviewCard extends Component {
             <i className="fas fa-star"></i>
             <i className="fas fa-star"></i>
           </div>
-          <p className="contentsBody">{review.text}</p>
+          <p className="contentsBody">{review.content}</p>
           <div className="user">
-            <span className="userName">{review.username}</span>
+            <span className="userName">{review.name}</span>
             <span className="date">{review.date}</span>
           </div>
         </div>
