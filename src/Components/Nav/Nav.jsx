@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Nav.scss';
 
 class Nav extends Component {
@@ -71,9 +72,9 @@ class Nav extends Component {
               </a>
             </li>
             <li>
-              <a href="#">
+              <Link to="/cart">
                 <i className="ic shoppingBasket fas fa-shopping-basket"></i>
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

@@ -1,1 +1,11 @@
 @import '../../styles/common.scss';
+
+.Cart {
+  padding: 120px 0;
+
+  .cartWrapper {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+}
