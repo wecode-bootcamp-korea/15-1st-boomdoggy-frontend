@@ -24,10 +24,13 @@ class Cart extends Component {
 
   calculateTotal = () => {
     const { cartContents } = this.state;
-    const total = cartContents.reduce((accumulator, currValue) => {
-      return accumulator + currValue.sub_total;
-    }, 0);
-    this.setState({ totalPrice: total });
+    let total = cartContents.map(
+      currValue => currValue.price * currValue.quantity
+    );
+    let subTotal = total.reduce((accumulator, currValue) => {
+      return accumulator + currValue;
+    });
+    this.setState({ totalPrice: subTotal });
   };
 
   handleRemove = id => {
@@ -35,6 +38,20 @@ class Cart extends Component {
     this.setState(
       {
         cartContents: cartContents.filter(cartItem => cartItem.id !== id),
+      },
+      () => {
+        this.calculateTotal();
+      }
+    );
+  };
+
+  handleChange = (id, value) => {
+    const { cartContents } = this.state;
+    this.setState(
+      {
+        cartContents: cartContents.map(cartItem =>
+          cartItem.id === id ? { ...cartItem, ...value } : cartItem
+        ),
       },
       () => {
         this.calculateTotal();
@@ -66,6 +83,7 @@ class Cart extends Component {
                     key={cartContents.id}
                     cartItem={cartContents}
                     onRemove={this.handleRemove}
+                    onChange={this.handleChange}
                   />
                 );
               })}
@@ -75,7 +93,6 @@ class Cart extends Component {
           <p className="contentsHeading">Subtotal</p>
           <h2 className="contentsTitle">$ {totalPrice}</h2>
           <div className="buttonWrapper">
-            <button className="button sub">Update Bag</button>
             <button className="button main">Checkout</button>
           </div>
         </div>

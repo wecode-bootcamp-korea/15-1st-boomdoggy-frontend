@@ -3,7 +3,20 @@ import './CartList.scss';
 
 class CartList extends Component {
   checkItemId = () => {
-    this.props.onRemove(this.props.cartItem.id);
+    const { onRemove, cartItem } = this.props;
+    onRemove(cartItem.id);
+  };
+
+  addQuantity = () => {
+    const { onChange, cartItem } = this.props;
+    cartItem.quantity = cartItem.quantity + 1;
+    onChange(cartItem.id, cartItem.quantity);
+  };
+
+  removeQuantity = () => {
+    const { onChange, cartItem } = this.props;
+    cartItem.quantity = cartItem.quantity - 1;
+    onChange(cartItem.id, cartItem.quantity);
   };
 
   render() {
@@ -23,15 +36,19 @@ class CartList extends Component {
         <div className="cartColumn right">
           <p>$ {cartItem.price}</p>
           <div className="quantitySelector">
-            <button className="minusBtn">-</button>
+            <button className="minusBtn" onClick={this.removeQuantity}>
+              -
+            </button>
             <input
               className="quantityInput"
               value={cartItem.quantity}
               min="1"
             ></input>
-            <button className="plusBtn">+</button>
+            <button className="plusBtn" onClick={this.addQuantity}>
+              +
+            </button>
           </div>
-          <p>$ {cartItem.total}</p>
+          <p>$ {cartItem.price * cartItem.quantity}</p>
         </div>
       </section>
     );
