@@ -6,30 +6,33 @@ class Cart extends Component {
   constructor() {
     super();
     this.state = {
-      cartList: {},
+      cartContents: [],
       totalQuantity: 0,
       totalPrice: 0,
     };
+    this.quantity = 0;
   }
 
   componentDidMount() {
-    fetch(`http://localhost:3000/data/Carts.json`)
+    fetch(`/data/Carts.json`)
       .then(res => res.json())
       .then(res => {
-        this.setState({ cartList: res });
+        this.setState({ cartContents: res.Carts }, () => {
+          this.calculateTotal();
+        });
       });
   }
 
-  totalPrice = () => {
-    return this.state.cartList.reduce(
-      (accumulator, currentValue) => accumulator + currentValue.sub_total,
-      0
-    );
+  calculateTotal = () => {
+    const { cartContents } = this.state;
+    const total = cartContents.reduce((accumulator, currValue) => {
+      return accumulator + currValue.sub_total;
+    }, 0);
+    this.setState({ totalPrice: total });
   };
 
   render() {
-    const { Carts } = this.state.cartList;
-
+    const { cartContents, totalPrice } = this.state;
     return (
       <div className="Cart">
         <h2 className="contentsTitle">Your Bag</h2>
@@ -45,15 +48,17 @@ class Cart extends Component {
             </div>
           </div>
           <div className="cartTable">
-            {Carts &&
-              Carts.map(Carts => {
-                return <CartList key={Carts.id} cartItem={Carts} />;
+            {cartContents &&
+              cartContents.map(cartContents => {
+                return (
+                  <CartList key={cartContents.id} cartItem={cartContents} />
+                );
               })}
           </div>
         </div>
         <div className="totalWrapper">
           <p className="contentsHeading">Subtotal</p>
-          <h2 className="contentsTitle">$ {this.totalPrice}</h2>
+          <h2 className="contentsTitle">$ {totalPrice}</h2>
           <div className="buttonWrapper">
             <button className="button sub">Update Bag</button>
             <button className="button main">Checkout</button>
