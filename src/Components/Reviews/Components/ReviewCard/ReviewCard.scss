@@ -7,60 +7,61 @@
   margin: 20px 10px;
   background-color: $white;
   transition: all 0.2s ease-out;
-}
 
-.review {
-  &.imgBox {
-    width: 280px;
-    height: 200px;
-    background-color: $lightGrey;
-
-    img {
+  .review {
+    &.imgBox {
       width: 280px;
       height: 200px;
-    }
-  }
+      background-color: $lightGrey;
 
-  &.contents {
-    padding: 30px 20px 40px;
-
-    .starsRate {
-      margin-bottom: 10px;
-      i {
-        margin-right: 2px;
-        font-size: 140%;
-        color: $yellow;
+      img {
+        width: 280px;
+        height: 200px;
       }
     }
 
-    .contentsBody {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: -webkit-box;
-      -webkit-line-clamp: 3; /* 라인수 */
-      -webkit-box-orient: vertical;
-      word-wrap: break-word;
-      line-height: 1.2em;
-      height: 3.6em;
-      text-align: left;
-    }
+    &.contents {
+      padding: 30px 20px 40px;
 
-    .user {
-      margin-top: 14px;
-      font-size: 13px;
+      .starsRate {
+        margin-bottom: 10px;
 
-      .userName {
-        margin-right: 10px;
-        font-family: 'THICCCBOI Bold', sans-serif;
+        i {
+          margin-right: 2px;
+          font-size: 140%;
+          color: $yellow;
+        }
       }
-      .date {
-        font-size: 10px;
-        color: $grey;
-        display: inline-block;
-        width: 52px;
-        white-space: nowrap;
+
+      .contentsBody {
         overflow: hidden;
-        text-overflow: none;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* 라인수 */
+        -webkit-box-orient: vertical;
+        word-wrap: break-word;
+        line-height: 1.2em;
+        height: 3.6em;
+        text-align: left;
+      }
+
+      .user {
+        margin-top: 14px;
+        font-size: 13px;
+
+        .userName {
+          margin-right: 10px;
+          font-family: 'THICCCBOI Bold', sans-serif;
+        }
+        .date {
+          font-size: 10px;
+          color: $grey;
+          display: inline-block;
+          width: 52px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: none;
+        }
       }
     }
   }
