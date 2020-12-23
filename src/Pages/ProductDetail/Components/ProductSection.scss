@@ -1,3 +1,5 @@
+@import '../../../styles/color';
+
 .ProductDetail {
   width: 100%;
   background-color: white;
@@ -97,13 +99,27 @@
         justify-content: center;
         align-items: center;
         button {
-          height: 20px;
-          width: 20px;
-          margin: 5px 10px;
+          width: 30px;
+          height: 40px;
+          border: 1px solid $lightGrey;
+          background-color: $lightGrey;
+          outline: none;
+          cursor: pointer;
+          &.minusBtn {
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+          }
+          &.plusBtn {
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+          }
         }
+
         span {
           font-size: 24px;
           margin-top: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
         }
       }
       .addBtn {

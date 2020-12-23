@@ -60,11 +60,8 @@ class ProductSection extends Component {
   gotoCart = () => {
     this.props.history.push('/cart');
   };
-  render() {
-    console.log(this.state.showBenefits);
-    console.log(this.state.showIngredients);
-    console.log(this.state.showProductDetail);
 
+  render() {
     const {
       products,
       showProductDetail,
@@ -139,9 +136,13 @@ class ProductSection extends Component {
               </div>
             </div>
             <div className="quantitySelector">
-              <button onClick={this.handleDecrease}>-</button>
+              <button onClick={this.handleDecrease} className="minusBtn">
+                -
+              </button>
               <span>{count}</span>
-              <button onClick={this.handleIncrease}>+</button>
+              <button onClick={this.handleIncrease} className="plusBtn">
+                +
+              </button>
             </div>
             <button className="addBtn" onClick={this.goToCart}>
               ADD TO CART

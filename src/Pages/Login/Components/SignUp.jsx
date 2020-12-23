@@ -73,7 +73,6 @@ class SignUp extends Component {
     })
       .then(res => res.json())
       .then(result => {
-        console.log(result.message);
         switch (result.message) {
           case 'SUCCESS':
             alert(`${lastName}${firstName}님 회원가입을 축하드립니다.`);
