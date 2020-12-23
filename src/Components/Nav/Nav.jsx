@@ -62,9 +62,9 @@ class Nav extends Component {
           </ul>
           <ul className="navOptions">
             <li>
-              <a href="#">
+              <Link to="/search">
                 <i className="ic serach fas fa-search"></i>
-              </a>
+              </Link>
             </li>
             <li>
               <Link to="/login">
