@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Nav.scss';
 import { Link } from 'react-router-dom';
 class Nav extends Component {
@@ -61,9 +62,9 @@ class Nav extends Component {
           </ul>
           <ul className="navOptions">
             <li>
-              <a href="#">
+              <Link to="/search">
                 <i className="ic serach fas fa-search"></i>
-              </a>
+              </Link>
             </li>
             <li>
               <Link to="/login">
