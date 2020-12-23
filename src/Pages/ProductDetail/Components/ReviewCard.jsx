@@ -10,11 +10,11 @@ class ReviewCard extends Component {
         </div>
         <div className="review contents">
           <div className="starsRate">
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
-            <i className="fas fa-star"></i>
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
+            <i className="fas fa-star" />
           </div>
           <p className="contentsBody">{review.content}</p>
           <div className="user">

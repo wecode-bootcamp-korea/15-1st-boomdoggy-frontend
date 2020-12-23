@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import './ProductSection.scss';
+import { PRODUCT_DETAIL_API } from '../../../config';
 class ProductSection extends Component {
   state = {
     count: 0,
     radioGroup: {
-      2: true,
+      2: false,
       6: false,
       12: false,
     },
     showProductDetail: false,
     showBenefits: false,
     showIngredients: false,
-    showFeedingGuide: false,
     products: [],
     price: 0,
   };
+
   handlePrice = e => {
     const { value } = e.target;
     const { products } = this.state;
-    console.log(products);
     switch (value) {
       case '2':
         this.setState({ price: products.price });
@@ -52,12 +52,29 @@ class ProductSection extends Component {
 
   componentDidMount = () => {
     const value = this.props.match.params.items;
-    fetch(`http://192.168.0.2:8000/products/detail/${value}`)
+    fetch(`${PRODUCT_DETAIL_API}/products/detail/${value}`)
       .then(res => res.json())
       .then(res => this.setState({ products: res.products_detail }));
   };
+
+  gotoCart = () => {
+    this.props.history.push('/cart');
+  };
   render() {
-    const { products } = this.state;
+    console.log(this.state.showBenefits);
+    console.log(this.state.showIngredients);
+    console.log(this.state.showProductDetail);
+
+    const {
+      products,
+      showProductDetail,
+      showBenefits,
+      showIngredients,
+      count,
+      price,
+      radioGroup,
+    } = this.state;
+
     return (
       <section className="ProductDetail">
         <div className="productInfoContainer">
@@ -79,35 +96,41 @@ class ProductSection extends Component {
           >
             <h2 className="contentsHeading">{products.category}</h2>
             <h1 className="infoTitle contentsTitle">{products.name}</h1>
-            <span className="priceInfo contentsBody">{`€  ${this.state.price}`}</span>
+            <span className="priceInfo contentsBody">{`${price.toLocaleString(
+              'en-US',
+              {
+                style: 'currency',
+                currency: 'EUR',
+              }
+            )}`}</span>
             <div className="selectorWraper">
-              <div className={this.state.radioGroup['2'] ? 'active' : null}>
+              <div className={radioGroup['2'] ? 'active' : null}>
                 <label For="id1">2kg</label>
                 <input
                   type="radio"
-                  checked={this.state.radioGroup['2']}
+                  checked={radioGroup['2']}
                   name="radioGroup"
                   value="2"
                   onChange={this.handleRadio}
                   onClick={this.handlePrice}
                 ></input>
               </div>
-              <div className={this.state.radioGroup['6'] ? 'active' : null}>
+              <div className={radioGroup['6'] ? 'active' : null}>
                 <label For="id2">6kg</label>
                 <input
                   type="radio"
-                  checked={this.state.radioGroup['6']}
+                  checked={radioGroup['6']}
                   name="radioGroup"
                   value="6"
                   onChange={this.handleRadio}
                   onClick={this.handlePrice}
                 ></input>
               </div>
-              <div className={this.state.radioGroup['12'] ? 'active' : null}>
+              <div className={radioGroup['12'] ? 'active' : null}>
                 <label For="id3">12kg</label>
                 <input
                   type="radio"
-                  checked={this.state.radioGroup['12']}
+                  checked={radioGroup['12']}
                   name="radioGroup"
                   value="12"
                   onChange={this.handleRadio}
@@ -116,68 +139,70 @@ class ProductSection extends Component {
               </div>
             </div>
             <div className="quantitySelector">
-              <button onClick={this.handleIncrease}>+</button>
-              <span>{this.state.count}</span>
               <button onClick={this.handleDecrease}>-</button>
+              <span>{count}</span>
+              <button onClick={this.handleIncrease}>+</button>
             </div>
-            <button className="addBtn">ADD TO CART</button>
+            <button className="addBtn" onClick={this.goToCart}>
+              ADD TO CART
+            </button>
             <div className="productAccordian">
               <div className="productAccordianUnit">
                 <div className="productAccordianHeader contentsBody">
                   Product description
                 </div>
-                {this.state.showProductDetail && (
-                  <div className="hide-contents contentsBody">
-                    {products.description && null}
-                  </div>
-                )}
                 <button
                   onClick={e => {
                     this.setState({
-                      showProductDetail: !this.state.showProductDetail,
+                      showProductDetail: !showProductDetail,
                     });
                   }}
                 >
-                  {this.state.showProductDetail ? '-' : '+'}
+                  {showProductDetail ? '-' : '+'}
                 </button>
               </div>
+              {showProductDetail && (
+                <div className="hide-contents contentsBody">
+                  {products.description}
+                </div>
+              )}
               <div className="productAccordianUnit">
                 <div className="productAccordianHeader contentsBody">
                   Benefits
                 </div>
-                {this.state.showBenefits && (
-                  <div className="hide-contents contentsBody">
-                    {products.benefits && null}
-                  </div>
-                )}
+
                 <button
-                  name="btn2"
                   onClick={e => {
-                    this.setState({ showBenefits: !this.state.showBenefits });
+                    this.setState({ showBenefits: !showBenefits });
                   }}
                 >
-                  {this.state.showBenefits ? '-' : '+'}
+                  {showBenefits ? '-' : '+'}
                 </button>
               </div>
+              {showBenefits && (
+                <div className="hide-contents contentsBody">
+                  {products.benefits}
+                </div>
+              )}
               <div className="productAccordianUnit">
                 <div className="productAccordianHeader contentsBody">
                   Ingredients
                 </div>
-                {this.state.showIngredients && (
-                  <div className="hide-contents contentsBody">
-                    {products.ingredients && null}
-                  </div>
-                )}
                 <button
                   onClick={e => {
                     this.setState({
-                      showIngredients: !this.state.showIngredients,
+                      showIngredients: !showIngredients,
                     });
                   }}
                 >
-                  {this.state.showIngredients ? '-' : '+'}
+                  {showIngredients ? '-' : '+'}
                 </button>
               </div>
+              {showIngredients && (
+                <div className="hide-contents contentsBody">
+                  {products.ingredients}
+                </div>
+              )}
             </div>
           </form>
         </div>

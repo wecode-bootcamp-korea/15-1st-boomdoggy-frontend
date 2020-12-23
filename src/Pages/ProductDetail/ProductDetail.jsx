@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import './ProductDetail.scss';
 import ProductionSection from './Components/ProductSection';
 import Reviews from './Components/Reviews';
 import Feature from '../Main/Components/Features/Features';
+import './ProductDetail.scss';
+
 class ProductDetail extends Component {
   render() {
     return (

@@ -57,6 +57,7 @@
           align-items: center;
           &.active {
             border: 1px solid black;
+            border-radius: 8px;
           }
           label {
             width: 100%;
@@ -141,6 +142,7 @@
           justify-content: space-between;
           align-items: center;
           position: relative;
+
           &.hide-contents {
             display: flex;
             flex-direction: column;
