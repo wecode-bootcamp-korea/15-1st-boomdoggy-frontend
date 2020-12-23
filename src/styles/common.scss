@@ -51,6 +51,7 @@ a {
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: all 0.2s ease-out;
+  outline: none;
 
   &:hover {
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);

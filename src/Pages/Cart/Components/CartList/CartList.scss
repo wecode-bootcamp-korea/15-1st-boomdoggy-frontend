@@ -1,11 +1,68 @@
 @import '../../../../styles/common.scss';
 
-.cartList {
-  width: 100%;
+.CartList {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 0;
-  border-bottom: 1px solid $grey;
+  width: 100%;
+  padding: 25px 10px;
+  border-bottom: 1px solid #eee;
+  .cartColumn.left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 60%;
+  }
+  .cartColumn.right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+  }
+  .productImg {
+    width: 100px;
+    margin-right: 40px;
+  }
+  .productTitle {
+    margin-bottom: 10px;
+    font-size: 17px;
+    line-height: 20px;
+    font-family: 'THICCCBOI Bold', sans-serif;
+  }
+  .productOption {
+    margin-bottom: 10px;
+  }
+  .removeBtn {
+    font-size: 13px;
+    color: $grey;
+    text-decoration: underline;
+  }
+
+  .quantitySelector {
+    button {
+      width: 30px;
+      height: 40px;
+      border: 1px solid $lightGrey;
+      background-color: $lightGrey;
+      outline: none;
+      cursor: pointer;
+      &.minusBtn {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+      }
+      &.plusBtn {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+      }
+    }
+    input {
+      width: 50px;
+      height: 40px;
+      border: 1px solid $lightGrey;
+      text-align: center;
+    }
+  }
 }

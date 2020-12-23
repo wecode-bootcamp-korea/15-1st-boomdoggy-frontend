@@ -1,11 +1,57 @@
 @import '../../styles/common.scss';
 
 .Cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 120px 0;
 
   .cartWrapper {
-    width: 90%;
-    margin: 0 auto;
+    width: 80%;
+    margin: 60px auto;
     max-width: 1400px;
+
+    .cartRow {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      color: $grey;
+      font-size: 13px;
+    }
+
+    .cartLabel {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &.left {
+        justify-content: flex-start;
+        width: 60%;
+      }
+      &.right {
+        justify-content: space-between;
+        width: 40%;
+      }
+    }
+  }
+  .button.sub {
+    background-color: $lightGrey;
+  }
+
+  .totalWrapper {
+    .contentsHeading {
+      text-align: center;
+    }
+    .buttonWrapper {
+      display: flex;
+      flex-direction: column;
+      width: 30%;
+      margin: 0 auto 50px;
+
+      button {
+        margin-bottom: 10px;
+      }
+    }
   }
 }
