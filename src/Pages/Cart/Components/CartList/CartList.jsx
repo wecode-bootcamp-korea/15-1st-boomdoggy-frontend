@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import './CartList.scss';
 
 class CartList extends Component {
+  checkItemId = () => {
+    this.props.onRemove(this.props.cartItem.id);
+  };
+
   render() {
     const { cartItem } = this.props;
     return (
@@ -11,9 +15,9 @@ class CartList extends Component {
           <div className="productContents">
             <h5 className="productTitle">{cartItem.product_name}</h5>
             <h6 className="productOption">{cartItem.option_kg}kg</h6>
-            <a className="removeBtn" alt="removeBtn" href="#">
+            <span className="removeBtn" onClick={this.checkItemId}>
               Remove
-            </a>
+            </span>
           </div>
         </div>
         <div className="cartColumn right">

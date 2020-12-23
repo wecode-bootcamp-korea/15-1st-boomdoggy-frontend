@@ -10,7 +10,6 @@ class Cart extends Component {
       totalQuantity: 0,
       totalPrice: 0,
     };
-    this.quantity = 0;
   }
 
   componentDidMount() {
@@ -29,6 +28,18 @@ class Cart extends Component {
       return accumulator + currValue.sub_total;
     }, 0);
     this.setState({ totalPrice: total });
+  };
+
+  handleRemove = id => {
+    const { cartContents } = this.state;
+    this.setState(
+      {
+        cartContents: cartContents.filter(cartItem => cartItem.id !== id),
+      },
+      () => {
+        this.calculateTotal();
+      }
+    );
   };
 
   render() {
@@ -51,7 +62,11 @@ class Cart extends Component {
             {cartContents &&
               cartContents.map(cartContents => {
                 return (
-                  <CartList key={cartContents.id} cartItem={cartContents} />
+                  <CartList
+                    key={cartContents.id}
+                    cartItem={cartContents}
+                    onRemove={this.handleRemove}
+                  />
                 );
               })}
           </div>
