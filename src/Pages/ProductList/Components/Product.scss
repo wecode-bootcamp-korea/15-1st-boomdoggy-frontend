@@ -6,31 +6,30 @@
     &:hover .hoverImg {
       z-index: 2;
     }
-    a {
-      text-decoration: none;
-      img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-      .hoverImg {
-        position: absolute;
-        display: block;
-        top: 0px;
-        z-index: -1;
-      }
-      .title {
-        margin: 20px 0px 15px 0px;
-      }
-      .from {
-        line-height: 9px;
-        font-size: 11px;
-        color: #a09bb2;
-      }
-      .price {
-        margin: 10px 0px 5px 0px;
-        line-height: 14px;
-      }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hoverImg {
+      position: absolute;
+      display: block;
+      top: 0px;
+      z-index: -1;
+    }
+    .title {
+      margin: 20px 0px 15px 0px;
+      color: #36205c;
+    }
+    .from {
+      line-height: 9px;
+      font-size: 11px;
+      color: #a09bb2;
+    }
+    .price {
+      margin: 10px 0px 5px 0px;
+      line-height: 14px;
+      color: #36205c;
     }
   }
 }

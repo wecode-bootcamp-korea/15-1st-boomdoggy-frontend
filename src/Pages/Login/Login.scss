@@ -6,17 +6,18 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-}
 
-.imgLeft {
-  position: absolute;
-  z-index: 1;
-  left: 0;
-  bottom: 150px;
-}
-.imgRight {
-  position: absolute;
-  z-index: 1;
-  right: 0;
-  bottom: 300px;
+  .imgLeft {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    bottom: 150px;
+  }
+
+  .imgRight {
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    bottom: 300px;
+  }
 }

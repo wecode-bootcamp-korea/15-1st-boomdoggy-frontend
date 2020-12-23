@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './ProductSale.scss';
 
 class ProductSale extends Component {
@@ -7,16 +8,26 @@ class ProductSale extends Component {
     return (
       <div className="ProductSale">
         <ul className="item">
-          <a href="">
+          <Link to={`/product-detail/${product.id}`}>
             <div className="saleTag">SALE</div>
             <img src={product.main_image} alt="dog" />
             <img src={product.sub_image} alt="dogFeed" className="hoverImg" />
             <h2 className="title">{product.name}</h2>
             <div className="salePriceWrap">
-              <h3 className="originPrice">£{product.price}.00</h3>
-              <h3 className="salePrice">£{product.price * 0.9}.00</h3>
+              <h3 className="originPrice">
+                {product.price.toLocaleString('en-US', {
+                  style: 'currency',
+                  currency: 'EUR',
+                })}
+              </h3>
+              <h3 className="salePrice">
+                {(product.price * 0.9).toLocaleString('en-US', {
+                  style: 'currency',
+                  currency: 'EUR',
+                })}
+              </h3>
             </div>
-          </a>
+          </Link>
         </ul>
       </div>
     );

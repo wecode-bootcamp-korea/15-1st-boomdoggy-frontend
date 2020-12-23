@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import './Account.scss';
 import { withRouter } from 'react-router-dom';
+import './Account.scss';
 
 class Account extends Component {
   removeToken = () => {
     localStorage.removeItem('token');
-    this.props.history.push('/main');
+    this.props.history.push('/');
   };
   render() {
     return (
-      <div className="accountContainer">
+      <div className="Account">
         <section className="myAccountInfo">
           <div className="accountContents">
             <h3>Welcome, {localStorage.getItem('email')}</h3>
