@@ -18,7 +18,7 @@ class ProductDetail extends Component {
         </div>
         <section className="recommendInfo">
           <div className="recommendProduct">
-            <h3 className="recommendTitle">You may also like</h3>
+            <h3 className="recommendTitle contentsTitle">You may also like</h3>
           </div>
         </section>
       </>

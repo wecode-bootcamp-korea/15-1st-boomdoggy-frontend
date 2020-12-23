@@ -17,18 +17,18 @@ class ProductSection extends Component {
     price: 0,
   };
   handlePrice = e => {
-    const { products, value } = this.state;
+    const { value } = e.target;
+    const { products } = this.state;
+    console.log(products);
     switch (value) {
       case '2':
         this.setState({ price: products.price });
         break;
       case '6':
-        this.setState({ price: 0 });
-        this.setState({ price: products.price * 3 });
+        this.setState({ price: products.price * 3 * 0.9 });
         break;
       case '12':
-        this.setState({ price: 0 });
-        this.setState({ price: products.price * 6 });
+        this.setState({ price: products.price * 6 * 0.8 });
         break;
       default:
     }
@@ -77,9 +77,9 @@ class ProductSection extends Component {
               e.preventDefault();
             }}
           >
-            <h2>{products.category}</h2>
-            <h1 className="infoTitle">{products.name}</h1>
-            <span className="priceInfo">{`€  ${this.state.price}`}</span>
+            <h2 className="contentsHeading">{products.category}</h2>
+            <h1 className="infoTitle contentsTitle">{products.name}</h1>
+            <span className="priceInfo contentsBody">{`€  ${this.state.price}`}</span>
             <div className="selectorWraper">
               <div className={this.state.radioGroup['2'] ? 'active' : null}>
                 <label For="id1">2kg</label>
@@ -123,12 +123,12 @@ class ProductSection extends Component {
             <button className="addBtn">ADD TO CART</button>
             <div className="productAccordian">
               <div className="productAccordianUnit">
-                <div className="productAccordianHeader">
+                <div className="productAccordianHeader contentsBody">
                   Product description
                 </div>
                 {this.state.showProductDetail && (
-                  <div className="hide-contents">
-                    {products.description && products.description}
+                  <div className="hide-contents contentsBody">
+                    {products.description && null}
                   </div>
                 )}
                 <button
@@ -142,10 +142,12 @@ class ProductSection extends Component {
                 </button>
               </div>
               <div className="productAccordianUnit">
-                <div className="productAccordianHeader">Benefits</div>
+                <div className="productAccordianHeader contentsBody">
+                  Benefits
+                </div>
                 {this.state.showBenefits && (
-                  <div className="hide-contents">
-                    {products.benefits && products.benefits}
+                  <div className="hide-contents contentsBody">
+                    {products.benefits && null}
                   </div>
                 )}
                 <button
@@ -158,10 +160,12 @@ class ProductSection extends Component {
                 </button>
               </div>
               <div className="productAccordianUnit">
-                <div className="productAccordianHeader">Ingredients</div>
+                <div className="productAccordianHeader contentsBody">
+                  Ingredients
+                </div>
                 {this.state.showIngredients && (
-                  <div className="hide-contents">
-                    {products.ingredients && products.ingredients}
+                  <div className="hide-contents contentsBody">
+                    {products.ingredients && null}
                   </div>
                 )}
                 <button

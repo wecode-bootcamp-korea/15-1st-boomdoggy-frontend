@@ -20,7 +20,6 @@ class Account extends Component {
         <section className="orderHistory">
           <div className="historyContents">
             <h4>Order History</h4>
-            <p></p>
           </div>
         </section>
         <section className="accountDetail">
