@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './SignIn.scss';
 import { withRouter } from 'react-router-dom';
 import { SIGNIN_API } from '../../../config';
+import './SignIn.scss';
 
 class SignIn extends Component {
   state = {
@@ -22,7 +22,6 @@ class SignIn extends Component {
       .then(res => res.json())
       .then(result => {
         if (result.Token) {
-          console.log(result);
           localStorage.setItem('token', result.Token);
           localStorage.setItem('email', result.email);
           this.props.history.push('/account');
@@ -32,31 +31,36 @@ class SignIn extends Component {
       });
   };
 
+  handleInput = e => {
+    const { value, name } = e.target;
+    this.setState({
+      [name]: value,
+    });
+  };
+
   render() {
     return (
       <div className="SignIn">
         <form action="" className="loginForm">
           <h3 className="contentsTitle">Sign In</h3>
-          <label className="loginEmailLabel">EMAIL</label>
-          <input
-            type="email"
-            className="loginEmailInput"
-            onChange={
-              (this.handleEmail = e => {
-                this.setState({ emailCheck: e.target.value });
-              })
-            }
-          />
-          <label className="loginPwLabel">PASSWORD</label>
-          <input
-            type="password"
-            className="loginPwInput"
-            onChange={
-              (this.handlePw = e => {
-                this.setState({ pwCheck: e.target.value });
-              })
-            }
-          />
+          <div className="emailContainer">
+            <label className="loginEmailLabel">EMAIL</label>
+            <input
+              type="email"
+              name="emailCheck"
+              className="loginEmailInput"
+              onChange={this.handleInput}
+            />
+          </div>
+          <div className="pwContainer">
+            <label className="loginPwLabel">PASSWORD</label>
+            <input
+              type="password"
+              name="pwCheck"
+              className="loginPwInput"
+              onChange={this.handleInput}
+            />
+          </div>
           <button
             className="signInBtn"
             onClick={e => {

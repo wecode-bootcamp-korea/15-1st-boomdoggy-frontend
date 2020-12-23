@@ -1,0 +1,56 @@
+.ProductSale {
+  width: calc(25% - 40px);
+  text-align: center;
+  position: relative;
+  .item {
+    &:hover .hoverImg {
+      z-index: 1;
+    }
+    a {
+      .saleTag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 20%;
+        height: 8%;
+        top: 10px;
+        right: 10px;
+        background-color: #d14e67;
+        color: white;
+        border-radius: 15px;
+        font-size: 12px;
+        font-weight: 700;
+        z-index: 2;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .hoverImg {
+        position: absolute;
+        display: block;
+        top: 0px;
+        z-index: -1;
+      }
+      .title {
+        margin: 20px 0px 15px 0px;
+        color: #36205c;
+      }
+
+      .salePriceWrap {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px 50px;
+        line-height: 14px;
+        .originPrice {
+          text-decoration: line-through;
+        }
+        .salePrice {
+          color: #d14e67;
+        }
+      }
+    }
+  }
+}

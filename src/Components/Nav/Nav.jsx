@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Nav.scss';
-import { Link } from 'react-router-dom';
+
 class Nav extends Component {
   listener = null;
   constructor(props) {
@@ -50,14 +50,14 @@ class Nav extends Component {
         </div>
         <nav className={`${nav ? 'navBarOn' : 'navBar'}`}>
           <a href="/" className="mainLogo">
-            <img alt="logo" src="./images/main_logo.svg" />
+            <img alt="logo" src="/images/main_logo.svg" />
           </a>
           <ul className="navList">
             <li>
-              <a href="#">Our Treats</a>
+              <Link to="/products/treats">Our Treats</Link>
             </li>
             <li>
-              <a href="#">Our Food</a>
+              <Link to="/products/ourfoods">Our Food</Link>
             </li>
           </ul>
           <ul className="navOptions">
