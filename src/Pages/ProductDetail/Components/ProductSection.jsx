@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import './ProductSection.scss';
 import { PRODUCT_DETAIL_API } from '../../../config';
+import './ProductSection.scss';
+
 class ProductSection extends Component {
   state = {
     count: 0,

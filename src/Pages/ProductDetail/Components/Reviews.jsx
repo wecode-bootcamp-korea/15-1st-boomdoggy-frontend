@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './Reviews.scss';
 import ReviewCard from './ReviewCard';
+import './Reviews.scss';
+
 class Reviews extends Component {
   state = {
     reviews: [],
