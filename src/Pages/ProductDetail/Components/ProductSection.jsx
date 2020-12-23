@@ -7,29 +7,36 @@ class ProductSection extends Component {
   state = {
     count: 0,
     radioGroup: {
+      1: false,
       2: false,
-      6: false,
-      12: false,
+      3: false,
     },
     showProductDetail: false,
     showBenefits: false,
     showIngredients: false,
     products: [],
     price: 0,
+    kg_value: '',
   };
 
   handlePrice = e => {
     const { value } = e.target;
     const { products } = this.state;
     switch (value) {
+      case '1':
+        this.setState({ price: products.price, kg_value: value });
+        break;
       case '2':
-        this.setState({ price: products.price });
+        this.setState({
+          price: products.price * 3,
+          kg_value: value,
+        });
         break;
-      case '6':
-        this.setState({ price: products.price * 3 * 0.9 });
-        break;
-      case '12':
-        this.setState({ price: products.price * 6 * 0.8 });
+      case '3':
+        this.setState({
+          price: products.price * 6,
+          kg_value: value,
+        });
         break;
       default:
     }
@@ -58,8 +65,20 @@ class ProductSection extends Component {
       .then(res => this.setState({ products: res.products_detail }));
   };
 
-  gotoCart = () => {
-    this.props.history.push('/cart');
+  goToCart = () => {
+    const { products, count, kg_value } = this.state;
+    fetch('http://192.168.0.3:8000/orders/cart', {
+      method: 'POST',
+      body: JSON.stringify({
+        order_id: products.id,
+        product_id: products.id,
+        quantity: count,
+        option_id: Number(kg_value),
+        payments_type_id: 1,
+        total_price: '',
+      }),
+    });
+    this.props.history.push('/');
   };
 
   render() {
@@ -72,7 +91,7 @@ class ProductSection extends Component {
       price,
       radioGroup,
     } = this.state;
-
+    console.log(typeof this.state.kg_value);
     return (
       <section className="ProductDetail">
         <div className="productInfoContainer">
@@ -102,8 +121,19 @@ class ProductSection extends Component {
               }
             )}`}</span>
             <div className="selectorWraper">
-              <div className={radioGroup['2'] ? 'active' : null}>
+              <div className={radioGroup['1'] ? 'active' : null}>
                 <label For="id1">2kg</label>
+                <input
+                  type="radio"
+                  checked={radioGroup['1']}
+                  name="radioGroup"
+                  value="1"
+                  onChange={this.handleRadio}
+                  onClick={this.handlePrice}
+                ></input>
+              </div>
+              <div className={radioGroup['2'] ? 'active' : null}>
+                <label For="id2">6kg</label>
                 <input
                   type="radio"
                   checked={radioGroup['2']}
@@ -113,24 +143,13 @@ class ProductSection extends Component {
                   onClick={this.handlePrice}
                 ></input>
               </div>
-              <div className={radioGroup['6'] ? 'active' : null}>
-                <label For="id2">6kg</label>
-                <input
-                  type="radio"
-                  checked={radioGroup['6']}
-                  name="radioGroup"
-                  value="6"
-                  onChange={this.handleRadio}
-                  onClick={this.handlePrice}
-                ></input>
-              </div>
-              <div className={radioGroup['12'] ? 'active' : null}>
+              <div className={radioGroup['3'] ? 'active' : null}>
                 <label For="id3">12kg</label>
                 <input
                   type="radio"
-                  checked={radioGroup['12']}
+                  checked={radioGroup['3']}
                   name="radioGroup"
-                  value="12"
+                  value="3"
                   onChange={this.handleRadio}
                   onClick={this.handlePrice}
                 ></input>
