@@ -1,0 +1,68 @@
+@import '../../../../styles/common.scss';
+
+@mixin flex($direction: row, $justify: space-between, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.CartList {
+  @include flex();
+  width: 100%;
+  padding: 25px 10px;
+  border-bottom: 1px solid #eee;
+
+  .cartColumn.left {
+    @include flex(row, flex-start, center);
+    width: 60%;
+  }
+  .cartColumn.right {
+    @include flex();
+    width: 40%;
+  }
+  .productImg {
+    width: 100px;
+    margin-right: 40px;
+  }
+  .productTitle {
+    margin-bottom: 10px;
+    font-size: 17px;
+    line-height: 20px;
+    font-family: 'THICCCBOI Bold', sans-serif;
+  }
+  .productOption {
+    margin-bottom: 10px;
+  }
+  .removeBtn {
+    font-size: 13px;
+    color: $grey;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .quantitySelector {
+    button {
+      width: 30px;
+      height: 40px;
+      border: 1px solid $lightGrey;
+      background-color: $lightGrey;
+      outline: none;
+      cursor: pointer;
+      &.minusBtn {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+      }
+      &.plusBtn {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+      }
+    }
+    input {
+      width: 50px;
+      height: 40px;
+      border: 1px solid $lightGrey;
+      text-align: center;
+    }
+  }
+}

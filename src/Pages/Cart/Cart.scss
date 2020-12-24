@@ -1,0 +1,58 @@
+@import '../../styles/common.scss';
+
+@mixin flex($direction: row, $justify: space-between, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+.Cart {
+  @include flex(column, center, center);
+  padding: 120px 0;
+
+  .cartWrapper {
+    width: 80%;
+    margin: 60px auto;
+    max-width: 1400px;
+
+    .cartRow {
+      @include flex(row, _, center);
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+      color: $grey;
+      font-size: 13px;
+    }
+
+    .cartLabel {
+      @include flex(row, _, center);
+      &.left {
+        justify-content: flex-start;
+        width: 60%;
+      }
+      &.right {
+        justify-content: space-between;
+        width: 40%;
+      }
+    }
+  }
+  .button.sub {
+    background-color: $lightGrey;
+  }
+
+  .totalWrapper {
+    .contentsHeading {
+      text-align: center;
+    }
+    .buttonWrapper {
+      @include flex(column);
+      width: 300px;
+      margin: 50px auto;
+
+      button {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

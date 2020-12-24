@@ -72,9 +72,9 @@ class Nav extends Component {
               </Link>
             </li>
             <li>
-              <a href="#">
+              <Link to="/cart">
                 <i className="ic shoppingBasket fas fa-shopping-basket"></i>
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
