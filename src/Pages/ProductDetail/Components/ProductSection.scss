@@ -1,0 +1,176 @@
+@import '../../../styles/color';
+
+.ProductDetail {
+  width: 100%;
+  background-color: white;
+  padding: 80px 0;
+
+  .productInfoContainer {
+    width: 95%;
+    max-width: 1200px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    div {
+      img {
+        width: 600px;
+        height: 667px;
+      }
+      div {
+        width: 100%;
+        .smallImg {
+          width: 40%;
+          height: 250px;
+        }
+      }
+    }
+    form {
+      width: 45%;
+      h2 {
+        font-size: 13px;
+        letter-spacing: 1px;
+        color: #a09bb2;
+        display: block;
+        margin: 0 0 11px 10px;
+      }
+      h1 {
+        font-size: 40px;
+        color: #361f5b;
+        margin: 0.67em 0;
+      }
+      span {
+        font-size: 16px;
+        margin: 0 0 20px;
+      }
+      .selectorWraper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        div {
+          position: relative;
+          width: 100%;
+          margin-top: 20px;
+          margin-right: 10px;
+          display: flex;
+          align-items: center;
+          &.active {
+            border: 1px solid black;
+            border-radius: 8px;
+          }
+          label {
+            width: 100%;
+            padding: 14px 17px;
+            display: block;
+            background: #ffffff;
+            text-transform: uppercase;
+            font-size: 12px;
+            line-height: 12px;
+            font-family: 'THICCCBOI-Bold';
+            letter-spacing: 0.25px;
+            border: 1px solid #f1f1f1;
+            text-align: center;
+            border-radius: 6px;
+            color: #361f5b;
+          }
+          input {
+            display: block;
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 500;
+            margin: 0;
+            cursor: pointer;
+          }
+        }
+      }
+      .quantitySelector {
+        font-size: 15px;
+        height: 50px;
+        margin: 15px auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        button {
+          width: 30px;
+          height: 40px;
+          border: 1px solid $lightGrey;
+          background-color: $lightGrey;
+          outline: none;
+          cursor: pointer;
+          &.minusBtn {
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+          }
+          &.plusBtn {
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+          }
+        }
+
+        span {
+          font-size: 24px;
+          margin-top: 15px;
+          margin-left: 10px;
+          margin-right: 10px;
+        }
+      }
+      .addBtn {
+        justify-content: center;
+        align-items: center;
+        min-width: 300px;
+        width: 100%;
+        height: 50px;
+        font-size: 13px;
+        color: #ffffff;
+        appearance: none;
+        background: #606eea;
+        border-radius: 27.5px;
+        letter-spacing: 1px;
+        border: none;
+        cursor: pointer;
+      }
+      .addBtn:hover {
+        transform: scale(1.1);
+      }
+      .productAccordian {
+        width: 100%;
+        padding: 0px 30px;
+        margin: 60px 0;
+        display: inline-block;
+        overflow: hidden;
+        user-select: none;
+        border-top-left-radius: 6px;
+        border-top-right-radius: 6px;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+        div {
+          padding: 30px 0px;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          position: relative;
+
+          &.hide-contents {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+          }
+          button {
+            appearance: none;
+            border: none;
+            background: none;
+          }
+        }
+      }
+    }
+  }
+}
