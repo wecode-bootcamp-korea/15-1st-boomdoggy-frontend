@@ -28,40 +28,31 @@ class SignUp extends Component {
   handleValid = () => {
     const { firstName, lastName } = this.state;
     this.setState({
-      isFirstValid: firstName.length ? true : false,
-      isLastValid: lastName.length ? true : false,
+      isFirstValid: !!firstName.length,
+      isLastValid: !!lastName.length,
     });
   };
 
   getEmailValue = e => {
-    this.setState({ email: e.target.value });
+    const value = e.target.value;
     const regExp = /^[-A-Za-z0-9_]+[-A-Za-az0-9_.]*[@]{1}[-A-Za-z0-9_]+[-A-Za-z0-9_.]*[.]{1}[A-Za-z]{2,5}$/;
-    regExp.test(this.state.email)
-      ? this.setState({ isEmailValid: true })
+    regExp.test(value)
+      ? this.setState({ isEmailValid: true, email: value })
       : this.setState({ isEmailValid: false });
   };
 
   getPwvalue = e => {
-    this.setState({ pw: e.target.value });
     //8 ~ 10자 영문, 숫자 조합
+    const value = e.target.value;
     const regExp = /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
-    regExp.test(this.state.pw)
-      ? this.setState({ isPwValid: true })
+    regExp.test(value)
+      ? this.setState({ isPwValid: true, pw: value })
       : this.setState({ isPwValid: false });
   };
 
   goToAccout = e => {
     e.preventDefault();
-    const {
-      // isEmailValid,
-      // isFirstValid,
-      // isLastValid,
-      // isPwValid,
-      firstName,
-      lastName,
-      email,
-      pw,
-    } = this.state;
+    const { firstName, lastName, email, pw } = this.state;
     fetch(`${SIGNUP_API}/users/signup`, {
       method: 'POST',
       body: JSON.stringify({
@@ -83,10 +74,10 @@ class SignUp extends Component {
           case 'INVALID_PASSWORD':
             alert('비밀번호를 제대로 입력해주세요');
             break;
-          case 'INVALID_ID':
+          case 'INVALID_EMAIL':
             alert('잘못된 이메일 형식입니다.(@, . 포함)');
             break;
-          case 'PLEASE_INSERT_YOUR_NAME':
+          case 'INVALID_NAME':
             alert('성 또는 이름을 입력해주세요');
             break;
           default:
@@ -99,32 +90,40 @@ class SignUp extends Component {
       <div className="SignUp">
         <form className="signUpForm">
           <h3 className="contentsTitle">Register</h3>
-          <label className="firstNameLabel ">FIRST NAME</label>
-          <input
-            type="text"
-            className="firstNameInput"
-            onChange={this.handleValue}
-            name="firstName"
-          />
-          <label className="lastNameLabel">LAST NAME</label>
-          <input
-            type="text"
-            className="lastNameInput"
-            onChange={this.handleValue}
-            name="lastName"
-          />
-          <label className="signUpEmailLabel">EMAIL</label>
-          <input
-            type="email"
-            className="signUpEmailInput"
-            onChange={this.getEmailValue}
-          />
-          <label className="signUpPwLabel">PASSWORD</label>
-          <input
-            type="password"
-            className="signUpPwInput"
-            onChange={this.getPwvalue}
-          ></input>
+          <div>
+            <label className="firstNameLabel ">FIRST NAME</label>
+            <input
+              type="text"
+              className="firstNameInput"
+              onChange={this.handleValue}
+              name="firstName"
+            />
+          </div>
+          <div>
+            <label className="lastNameLabel">LAST NAME</label>
+            <input
+              type="text"
+              className="lastNameInput"
+              onChange={this.handleValue}
+              name="lastName"
+            />
+          </div>
+          <div>
+            <label className="signUpEmailLabel">EMAIL</label>
+            <input
+              type="email"
+              className="signUpEmailInput"
+              onChange={this.getEmailValue}
+            />
+          </div>
+          <div>
+            <label className="signUpPwLabel">PASSWORD</label>
+            <input
+              type="password"
+              className="signUpPwInput"
+              onChange={this.getPwvalue}
+            ></input>
+          </div>
           <button className="createBtn" onClick={this.goToAccout}>
             CREATE
           </button>

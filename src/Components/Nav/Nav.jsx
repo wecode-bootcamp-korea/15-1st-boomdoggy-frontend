@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './Nav.scss';
 import { Link } from 'react-router-dom';
+import './Nav.scss';
+
 class Nav extends Component {
   listener = null;
   constructor(props) {
@@ -53,17 +54,17 @@ class Nav extends Component {
           </a>
           <ul className="navList">
             <li>
-              <a href="#">Our Treats</a>
+              <Link to="/products/treats">Our Treats</Link>
             </li>
             <li>
-              <a href="#">Our Food</a>
+              <Link to="/products/ourfoods">Our Food</Link>
             </li>
           </ul>
           <ul className="navOptions">
             <li>
-              <a href="#">
+              <Link to="/search">
                 <i className="ic serach fas fa-search"></i>
-              </a>
+              </Link>
             </li>
             <li>
               <Link to="/login">

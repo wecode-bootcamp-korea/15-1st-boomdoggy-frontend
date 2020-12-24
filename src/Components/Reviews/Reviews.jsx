@@ -6,7 +6,7 @@ class Reviews extends Component {
   constructor() {
     super();
     this.state = {
-      reviewList: {},
+      reviews: {},
     };
   }
 
@@ -14,12 +14,12 @@ class Reviews extends Component {
     fetch(`http://192.168.0.2:8000/products/boomdoggy`)
       .then(res => res.json())
       .then(res => {
-        this.setState({ reviewList: res });
+        this.setState({ reviews: res });
       });
   }
 
   render() {
-    const { review_list } = this.state.reviewList;
+    const { review_list } = this.state.reviews;
 
     return (
       <section className="reviewsWrapper">

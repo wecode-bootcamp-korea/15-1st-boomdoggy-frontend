@@ -6,10 +6,18 @@ class Login extends Component {
   render() {
     return (
       <div className="mainContainer">
-        <img src="../images/pattern-left.svg" className="imgLeft" alt="" />
+        <img
+          src="../images/pattern-left.svg"
+          className="imgLeft"
+          alt="backgroundPatternImgLeft"
+        />
         <SignIn />
         <SignUp />
-        <img src="../images/pattern-right.svg" className="imgRight" alt="" />
+        <img
+          src="../images/pattern-right.svg"
+          className="imgRight"
+          alt="backgroundPatternImgRight"
+        />
       </div>
     );
   }

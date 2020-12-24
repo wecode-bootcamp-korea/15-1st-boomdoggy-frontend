@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { PRODUCT_DETAIL_API } from '../../../config';
+import { PRODUCT_CART_API } from '../../../config';
 import './ProductSection.scss';
 
 class ProductSection extends Component {
@@ -67,15 +68,15 @@ class ProductSection extends Component {
 
   goToCart = () => {
     const { products, count, kg_value } = this.state;
-    fetch('http://192.168.0.3:8000/orders/cart', {
+    fetch(`${PRODUCT_CART_API}/orders/cart`, {
       method: 'POST',
       body: JSON.stringify({
-        order_id: products.id,
+        // order_id: products.id,
         product_id: products.id,
         quantity: count,
         option_id: Number(kg_value),
-        payments_type_id: 1,
-        total_price: '',
+        // payments_type_id: 1,
+        // total_price: '',
       }),
     });
     this.props.history.push('/');

@@ -1,0 +1,30 @@
+@import '../../../styles/common.scss';
+%flex-center-sahre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ProductListHeader {
+  @extend %flex-center-sahre;
+  flex-direction: row;
+  background-color: $lightGrey;
+
+  .productListContents {
+    @extend %flex-center-sahre;
+    flex-direction: column;
+    width: 50%;
+    height: 400px;
+
+    .contentsBody {
+      width: 500px;
+    }
+  }
+  .productListHeaderImg {
+    height: 400px;
+    width: 50%;
+    background-position: center;
+    background-size: cover;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 10% 50%, 0% 0%);
+  }
+}
